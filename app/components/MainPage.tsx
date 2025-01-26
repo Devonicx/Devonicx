@@ -79,14 +79,14 @@ console.log(global.forms);
         global.forms?.includes("Non-Disclosure-Agreement") ||
         global.forms?.includes("Social-Media-Consent") ? (
           <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5 z-100">
-            <h2 className="text-[16px] md:text-[25px] font-[600] text-[rgb(0,162,255)]">
+            <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
               JOINING DOCUMENTS
             </h2>
             <div className="w-[full] h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex flex-row justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto">
               {global.forms?.includes("Offer-Letter-Intern") ? (
                 <Link
                   href={"/forms/Offer-Letter-Intern"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -103,7 +103,7 @@ console.log(global.forms);
               {global.forms?.includes("Offer-Letter-Probation") ? (
                 <Link
                   href={"/forms/Offer-Letter-Probation"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color hover:border-[rgb(0,162,255)] bg-white gap-[5%]"
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color hover:border-[#27416b] bg-white gap-[5%]"
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -120,7 +120,7 @@ console.log(global.forms);
               {global.forms?.includes("Appointment-Letter") ? (
                 <Link
                   href={"/forms/Appointment-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -138,7 +138,7 @@ console.log(global.forms);
               {global.forms?.includes("Non-Disclosure-Agreement") ? (
                 <Link
                   href={"/forms/Non-Disclosure-Agreement"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -156,7 +156,7 @@ console.log(global.forms);
               {global.forms?.includes("Social-Media-Consent") ? (
                 <Link
                   href={"/forms/Social-Media-Consent"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -176,14 +176,14 @@ console.log(global.forms);
         {global.forms?.includes("Salary-Increment-Letter") ||
         global.forms?.includes("Stipend-Increment-Letter") ? (
           <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5">
-            <h2 className="text-[16px] md:text-[25px] font-[600] text-[rgb(0,162,255)]">
+            <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
               PROMOTIONAL DOCUMENTS
             </h2>
             <div className="w-[full] h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto">
               {global.forms?.includes("Salary-Increment-Letter") ? (
                 <Link
                   href={"/forms/Salary-Increment-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -201,7 +201,7 @@ console.log(global.forms);
               {global.forms?.includes("Stipend-Increment-Letter") ? (
                 <Link
                   href={"/forms/Stipend-Increment-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -222,14 +222,14 @@ console.log(global.forms);
         global.forms?.includes("Internship-Extension-Letter") ||
         global.forms?.includes("Probation-Extension-Letter") ? (
           <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5">
-            <h2 className="text-[16px] md:text-[25px] font-[600] text-[rgb(0,162,255)]">
+            <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
               OTHER DOCUMENTS
             </h2>
             <div className="w-[full] h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto">
               {global.forms?.includes("Salary-Slip") ? (
                 <Link
                   href={"/forms/Salary-Slip"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -246,7 +246,7 @@ console.log(global.forms);
               {global.forms?.includes("Internship-Extension-Letter") ? (
                 <Link
                   href={"/forms/Internship-Extension-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -263,7 +263,7 @@ console.log(global.forms);
               {global.forms?.includes("Probation-Extension-Letter") ? (
                 <Link
                   href={"/forms/Probation-Extension-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -284,14 +284,14 @@ console.log(global.forms);
         global.forms?.includes("Termination-Letter") ||
         global.forms?.includes("Clearance-Letter") ? (
           <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5">
-            <h2 className="text-[16px] md:text-[25px] font-[600] text-[rgb(0,162,255)]">
+            <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
               CLEARANCE DOCUMENTS
             </h2>
             <div className="w-full h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto z-50">
               {global.forms?.includes("Experience-Letter") ? (
                 <Link
                   href={"/forms/Experience-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -309,7 +309,7 @@ console.log(global.forms);
               {global.forms?.includes("Termination-Letter") ? (
                 <Link
                   href={"/forms/Termination-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -327,7 +327,7 @@ console.log(global.forms);
               {global.forms?.includes("Clearance-Letter") ? (
                 <Link
                   href={"/forms/Clearance-Letter"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
@@ -346,14 +346,14 @@ console.log(global.forms);
         ) : null}
         {global.forms?.includes("Contract") ? (
           <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5">
-            <h2 className="text-[16px] md:text-[25px] font-[600] text-[rgb(0,162,255)]">
+            <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
               OTHER BUSINESS DOCUMENTS
             </h2>
             <div className="w-[full] h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto">
               {global.forms?.includes("Contract") ? (
                 <Link
                   href={"/forms/Contract"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[rgb(0,162,255)] "
+                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
                 >
                   <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">

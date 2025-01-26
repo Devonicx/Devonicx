@@ -535,7 +535,7 @@ export default function CreateUser() {
 
             <div className="w-full h-fit md:h-[100px] flex justify-end items-start px-5 md:px-20 pb-7 md:pb-10 gap-[25px]">
               <button
-                className="text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[rgb(0,162,255)] text-white rounded-[10px] hover:opacity-[0.8]"
+                className="text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]"
                 onClick={() => {
                   hasEmptyField({
                     username,

@@ -70,8 +70,8 @@ export default function ForgotPassword() {
           </button>
         </div>
       </div>
-      <div className="w-[4vw] h-[4vw] absolute top-[10%] left-[10%] bg-[rgb(255,214,0)] rotate-[45deg]"></div>
-      <div className="w-[4vw] h-[4vw] absolute top-[7%] left-[80%] bg-[rgb(0,161,253)] rotate-[45deg]"></div>
+      <div className="w-[4vw] h-[4vw] absolute top-[10%] left-[10%] bg-[rgb(30,217,146)] rotate-[45deg]"></div>
+      <div className="w-[4vw] h-[4vw] absolute top-[7%] left-[80%] bg-[rgb(39,65,107)] rotate-[45deg]"></div>
       <img
         src={shape4.src}
         className="w-[8vw] h-[8vw] absolute top-[40%] left-[10%]"
@@ -80,10 +80,10 @@ export default function ForgotPassword() {
         src={shape4.src}
         className="w-[8vw] h-[8vw] absolute top-[30%] left-[85%]"
       />
-      <div className="w-[3vw] h-[3vw] absolute top-[75%] left-[15%] bg-[rgb(0,161,253)] rotate-[45deg]"></div>
-      <div className="w-[3vw] h-[3vw] absolute top-[80%] left-[40%] bg-[rgb(255,214,0)] rotate-[45deg]"></div>
-      <div className="w-[5vw] h-[5vw] absolute top-[25%] left-[25%] bg-[rgb(0,161,253)] rounded-full"></div>
-      <div className="w-[5vw] h-[5vw] absolute top-[70%] left-[75%] bg-[rgb(0,161,253)] rounded-full"></div>
+      <div className="w-[3vw] h-[3vw] absolute top-[75%] left-[15%] bg-[rgb(39,65,107)] rotate-[45deg]"></div>
+      <div className="w-[3vw] h-[3vw] absolute top-[80%] left-[40%] bg-[rgb(30,217,146)] rotate-[45deg]"></div>
+      <div className="w-[5vw] h-[5vw] absolute top-[25%] left-[25%] bg-[rgb(39,65,107)] rounded-full"></div>
+      <div className="w-[5vw] h-[5vw] absolute top-[70%] left-[75%] bg-[rgb(39,65,107)] rounded-full"></div>
     </div>
   );
 }

@@ -39,7 +39,7 @@
   grid-area: 1/1;
   border: 8px solid;
   border-radius: 50%;
-  border-color: rgb(1, 161, 255) rgb(1, 161, 255) rgb(1, 161, 255) #0000;
+  border-color: rgb(39,65,107) rgb(39,65,107) rgb(39,65,107) #0000;
   mix-blend-mode: darken;
   animation: s4 1s infinite linear;
 }
@@ -54,7 +54,7 @@
 }
 
 .bg-main-blue {
-  background-color: rgb(1, 161, 255);
+  background-color: rgb(39,65,107);
 }
 
 .custom-bg {
@@ -65,14 +65,14 @@
   background-color: #00a2ff1a;
 }
 .bg-light-blue:hover {
-  background-color: rgb(1, 161, 255);
+  background-color: rgb(39,65,107);
 }
 
 .bg-tableBlueColor {
-  background-color: rgb(1, 161, 255);
+  background-color: rgb(39,65,107);
 }
 .text-tableBlueColor {
-  color: rgb(1, 161, 255);
+  color: rgb(39,65,107);
 }
 .th-border {
   border: solid rgb(217, 217, 217) 3px;
@@ -107,7 +107,7 @@ th {
 }
 
 .bg-main-blue {
-  background-color: rgb(1, 161, 255);
+  background-color: rgb(39,65,107);
 }
 
 .bg-hover-blue:hover {
@@ -117,10 +117,10 @@ th {
   background-color: #00a2ff1a;
 }
 .bg-light-blue:hover {
-  background-color: rgb(1, 161, 255);
+  background-color: rgb(39,65,107);
 }
 .text-main-blue {
-  color: rgb(1, 161, 255);
+  color: rgb(39,65,107);
 }
 .email-position {
   position: relative;
@@ -155,7 +155,7 @@ th {
     color: green;
   }
   to {
-    color: rgb(1, 161, 255);
+    color: rgb(39,65,107);
   }
 }
 

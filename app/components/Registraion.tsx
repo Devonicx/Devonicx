@@ -43,7 +43,7 @@ const Registration: React.FC<AllowanceInputProps> = ({
       <div className="flex justify-center items-center w-full bg-blue-30 h-full overflow-hidden relative">
         {!global.forgetToggle ? (
           <div className="flex flex-col-reverse sm:flex-row items-center w-[95%] 2xl:w-[87%] h-[90%] rounded-2xl overflow-hidden custom-b z-[100] bg-red-20 box">
-            <div className="sm:w-[40%] w-full h-[35%] sm:h-full flex flex-col justify-center items-center bg-[rgb(0,161,253)] relative overflow-hidden">
+            <div className="sm:w-[40%] w-full h-[35%] sm:h-full flex flex-col justify-center items-center bg-[rgb(39,65,107)] relative overflow-hidden">
               <img
                 src={shape2.src}
                 className="absolute right-[15%] top-[5%] w-[5vw]"
@@ -56,8 +56,8 @@ const Registration: React.FC<AllowanceInputProps> = ({
                 src={shape3.src}
                 className="absolute right-[30%] top-[80%] w-[3vw]"
               />
-              <div className="w-[5vw] h-[5vw] bg-[rgb(51,180,253)] absolute right-[-5%] top-[20%] rounded-full z-[100"></div>
-              <div className="w-[15vw] h-[15vw] bg-[rgb(51,180,253)] absolute left-[-7.5%] bottom-[-6%] rounded-full z-[100"></div>
+              <div className="w-[5vw] h-[5vw] bg-[#526789] absolute right-[-5%] top-[20%] rounded-full z-[100"></div>
+              <div className="w-[15vw] h-[15vw] bg-[#526789] absolute left-[-7.5%] bottom-[-6%] rounded-full z-[100"></div>
 
               <div className="flex flex-col justify-center items-center h-full z-[100]">
                 <h2 className="text-start text-white text-[25px] md:text-[32px] sm:pb-2 w-fit font-[700]">
@@ -86,7 +86,7 @@ const Registration: React.FC<AllowanceInputProps> = ({
         ) : (
           <ForgotPassword />
         )}
-        <div className="w-[30vh] h-[30vh] bg-[rgb(255,214,0)] absolute left-[-10vh] bottom-[-10vh] rounded-full z-[0]"></div>
+        <div className="w-[30vh] h-[30vh] bg-[rgb(30,217,146)] absolute left-[-10vh] bottom-[-10vh] rounded-full z-[0]"></div>
         <div className="w-[30vh] absolute right-[0px] top-[-5vh] z-[0]">
           <img src={loginRec.src} className="w-full h-full" />
         </div>

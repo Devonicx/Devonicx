@@ -1,5 +1,5 @@
 "use client";
-import logo from "@/public/logo-01 1 (1).svg";
+import logo from "@/public/devonix-logo-white.jpg";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";

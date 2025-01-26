@@ -53,7 +53,7 @@ ${text}`);
         </div>
         <div className="w-full h-fit flex justify-end items-start  px-3 md:px-8 xl:px-16 py-5 gap-[25px]">
           <button
-            className="text-center px-[20px] py-[7px]  text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[rgb(0,162,255)] text-white rounded-[10px]"
+            className="text-center px-[20px] py-[7px]  text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px]"
             onClick={() => {
               dispatch(setEmailShowR(false));
               handleCopyClick(letterText);

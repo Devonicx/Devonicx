@@ -371,7 +371,7 @@ const TerminationLetter: React.FC = () => {
             </div>
             <div className="w-full h-fit md:h-[100px] flex justify-end items-start px-5 md:px-20 pb-7 md:pb-10 gap-[25px]">
               <button
-                className={`text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[rgb(0,162,255)] text-white rounded-[10px] hover:opacity-[0.8]`}
+                className={`text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]`}
                 onClick={() =>
                   hasEmptyField(
                     data,
@@ -398,14 +398,14 @@ const TerminationLetter: React.FC = () => {
             onClick={() => setShowPrint(false)}
             title="Back To Form"
           >
-            <FaChevronLeft className="w-[80%] h-[80%] text-[rgb(0,162,255)]" />
+            <FaChevronLeft className="w-[80%] h-[80%] text-[#27416b]" />
           </button>
           <button
             className="w-[40px] md:w-[50px] h-[40px] md:h-[50px] flex justify-center items-center fixed right-[2vh] md:right-[5vh] top-[50vh] rounded-full hideOnPrint bg-neutral-100 z-[200]"
             onClick={() => window.print()}
             title="Make Print"
           >
-            <FaPrint className="w-[60%] h-[60%] text-[rgb(0,162,255)]" />
+            <FaPrint className="w-[60%] h-[60%] text-[#27416b]" />
           </button>
           <div className="w-full h-full overflow-auto">
             <TerminationLetterPrint />
