@@ -4,7 +4,7 @@ CREATE TABLE `registration` (
     `username` VARCHAR(191) NOT NULL,
     `password` VARCHAR(191) NOT NULL,
     `admin` BOOLEAN NOT NULL,
-    `forms` VARCHAR(191) NOT NULL DEFAULT '',
+    `forms` JSON NOT NULL,
 
     UNIQUE INDEX `registration_password_key`(`password`),
     PRIMARY KEY (`id`)

@@ -27,6 +27,7 @@ function MainPage() {
   let global = useSelector((state: RootState) => state.Global);
   let [userData, setUserData] = useState();
   let [forms, setForms] = useState<any>();
+console.log(global.forms);
 
   useEffect(() => {
     const title = `Document Handler`;
@@ -278,7 +279,7 @@ function MainPage() {
               ) : null}
             </div>
           </div>
-        ) : null}
+        ) : null} 
         {global.forms?.includes("Experience-Letter") ||
         global.forms?.includes("Termination-Letter") ||
         global.forms?.includes("Clearance-Letter") ? (
