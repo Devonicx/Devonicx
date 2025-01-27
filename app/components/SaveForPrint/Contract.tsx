@@ -375,7 +375,7 @@ ${insertBreaks(
                         </>
                       ) : item.includes(`>>`) ? (
                         <div
-                          className={`text-[16px] font-[400] leading-[23px] h-fit w-[95%] relative left-[5%] p-0 flex items-center  flex-end bg-yellow-30 ${
+                          className={`text-[16px] font-[400] leading-[23px] h-fit w-[95%] relative left-[5%] p-0 flex items-center  flex-end ${
                             item.length > 80
                               ? "justify-between"
                               : "justify-start gap-2"

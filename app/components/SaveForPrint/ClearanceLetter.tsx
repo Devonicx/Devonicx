@@ -43,7 +43,7 @@ const ClearanceLetterPrint: React.FC = () => {
                 </h1>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-1">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[13px] font-[400] w-full leading-[23px]">
                   Reference to the “Employee/Intern Handbook”, Employee exit
@@ -247,7 +247,7 @@ const ClearanceLetterPrint: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-1">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[13px] font-[400] w-full leading-[23px]">
                   {/* <br />
@@ -455,7 +455,7 @@ const ClearanceLetterPrint: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-1">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[13px] font-[400] w-full leading-[23px]">
                    <br />

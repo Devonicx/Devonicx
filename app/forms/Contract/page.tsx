@@ -1490,7 +1490,7 @@ Milestone 2   [30%]   Second Task`
                 </select>
                 <SelectChevron />
               </div>
-              <div className="w-[100%] md:w-[50%]  h-fit flex justify-end  items-center relative bg-yellow-30 pt-3">
+              <div className="w-[100%] md:w-[50%]  h-fit flex justify-end  items-center relative pt-3">
                 {writtenBy === "CEO" ? (
                   <textarea
                     className={`w-[60%] md:w-[100%] min-h-[45px] rounded-[10px] px-3 py-2 border-2 text-[12px] md:text-[14px] xl:text-[18px]  ${redBorder(

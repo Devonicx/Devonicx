@@ -65,7 +65,7 @@ const OfferLetterProbationPrint: React.FC = () => {
                 </h1>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start pb-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] leading-[23px]">
                   <b>
@@ -174,7 +174,7 @@ const OfferLetterProbationPrint: React.FC = () => {
               </div>
             </div>
 
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400]">
                   <div>

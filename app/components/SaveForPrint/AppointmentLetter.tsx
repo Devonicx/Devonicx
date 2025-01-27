@@ -64,7 +64,7 @@ const AppointmentLetterPrint: React.FC = () => {
                 </h1>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-1">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] leading-[23px]">
                   <b>
@@ -131,13 +131,13 @@ const AppointmentLetterPrint: React.FC = () => {
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center">
           <div className="w-[80%] h-[90%] absolute top-[160px] bg-green-40 flex flex-col justify-start items-start">
-            <div className="w-full flex justify-end items-start">
+            <div className="w-full flex justify-end items-start pb-2">
               <span className="text-[15px] font-[500] text-slate-600">
                 Page <b>2</b> of <b>2</b>
               </span>
             </div>
 
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-3">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] leading-[23px]">
                   {data.addIncLine && (

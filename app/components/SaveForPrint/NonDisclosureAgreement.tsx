@@ -30,7 +30,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                 </h1>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-2">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   This Non-Disclosure Agreement (the “Agreement”) is made and
@@ -108,7 +108,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-3">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   <div>
@@ -197,7 +197,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-3">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   <div>
