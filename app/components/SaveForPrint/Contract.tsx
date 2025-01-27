@@ -223,7 +223,7 @@ ${insertBreaks(
                   </b>
                 </span>
               </div>
-              <div className="pt-[10px] pb-[15px] flex flex-col justify-between items-start"></div>
+              <div className="py-3 flex flex-col justify-between items-start"></div>
 
               <div className="w-full flex justify-center items-start">
                 <h1 className="text-[21px] font-[700] underline ">

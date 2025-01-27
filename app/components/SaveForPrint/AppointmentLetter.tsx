@@ -39,15 +39,15 @@ const AppointmentLetterPrint: React.FC = () => {
   return (
     <div className="mx-auto w-fit h-fit flex flex-col justify-center items-center relative overflow-hidden showOnPrintOnl leading-[23px] text-justify shadow-2xl zooming">
       <div className="w-[215.9mm] h-[279.4mm] bg-image">
-        <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[155px] flex flex-col justify-start items-start bg-blue-30">
+        <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center">
+          <div className="w-[80%] h-[90%] absolute top-[160px] bg-red-60 flex flex-col justify-start items-start bg-blue-30">
             <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start pb-2">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[15px] font-[500] text-slate-600">
                   Page <b>1</b> of <b>2</b>
                 </span>
               </div>
-              <div className="flex flex-col justify-betwenn items-start pt-[10px] pb-[15px] ">
+              <div className="w-full flex flex-col justify-between bg-blue-60 items-start py-3 ">
                 <h2 className="text-[16px] font-[400]">
                   {data.currentDate.replaceAll("-", "/")}
                 </h2>
@@ -114,14 +114,14 @@ const AppointmentLetterPrint: React.FC = () => {
                   <p className="py-1"></p>
                   Please note that with this confirmation, you are now entitled
                   to the full range of benefits provided to permanent employees
-                  of Devonicx. Please consult HR Department for the
-                  knowledge base of incentives, and medical coverage policies.
+                  of Devonicx. Please consult HR Department for the knowledge
+                  base of incentives, and medical coverage policies.
                   <p className="py-1"></p>
                   The terms and conditions of your permanent employment will
-                  remain the same as outlined in the Devonicx Employee
-                  Handbook. It is important to familiarize yourself with the
-                  policies and guidelines provided in the handbook to ensure a
-                  smooth transition into your permanent role.
+                  remain the same as outlined in the Devonicx Employee Handbook.
+                  It is important to familiarize yourself with the policies and
+                  guidelines provided in the handbook to ensure a smooth
+                  transition into your permanent role.
                 </div>
               </div>
             </div>
@@ -130,14 +130,14 @@ const AppointmentLetterPrint: React.FC = () => {
       </div>{" "}
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[155px] flex flex-col justify-start items-start bg-blue-30">
+          <div className="w-[80%] h-[90%] absolute top-[160px] bg-green-40 flex flex-col justify-start items-start bg-blue-30">
             <div className="w-full flex justify-end items-start">
               <span className="text-[15px] font-[500] text-slate-600">
                 Page <b>2</b> of <b>2</b>
               </span>
             </div>
 
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-3">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] leading-[23px]">
                   {data.addIncLine && (

@@ -15,20 +15,14 @@ const NonDisclosureAgreementPrint: React.FC = () => {
     <div className="mx-auto w-fit h-fit flex flex-col justify-center items-center relative overflow-hidden showOnPrintOnly leading-[23px] text-justify shadow-2xl zooming">
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[155px] flex flex-col justify-start items-start bg-blue-30">
+          <div className="w-[80%] h-[90%] absolute top-[160px] flex flex-col justify-start items-start bg-blue-30">
             <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start pb-2">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[15px] font-[500] text-slate-600">
                   Page <b>1</b> of <b>3</b>
                 </span>
               </div>
-              <div className="flex flex-col justify-betwenn items-start pt-[10px] pb-[15px]">
-                {/* <h2 className="text-[16px] font-[400]">
-                  {data.currentDate.replaceAll("-", "/")}
-                </h2>
-                <h2 className="text-[16px] font-[400]">
-                  {formatUpperCase(data.name)}
-                </h2> */}
+              <div className="flex flex-col justify-betwenn items-start py-3">
               </div>
               <div className="w-full flex justify-center items-start">
                 <h1 className="text-[19px] font-[700] underline">
@@ -98,16 +92,6 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                     during the course of employment with the Company, shall
                     remain the sole and exclusive property of the Company.
                   </div>
-                  {/* <p className="py-2"></p>
-                  <div>
-                    <b>
-                      3. RETURN OF CONFIDENTIAL INFORMATION: <br />
-                    </b>
-                    Upon termination of employment with the Company, the
-                    Employee agrees to return to the Company all Confidential
-                    Information in the Employee’s possession or control,
-                    including all copies thereof.
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -116,19 +100,18 @@ const NonDisclosureAgreementPrint: React.FC = () => {
       </div>
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[155px] flex flex-col justify-start items-start bg-blue-30">
-            <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start pb-2">
+          <div className="w-[80%] h-[90%] absolute top-[160px] flex flex-col justify-start items-start bg-blue-30">
+            <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start pb-2 bg-red-60">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[17px] font-[500] text-slate-600">
                   Page <b>2</b> of <b>3</b>
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-3">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   <div>
-                    <p className="py-1"></p>
                     <div>
                       <b>
                         3. RETURN OF CONFIDENTIAL INFORMATION: <br />
@@ -198,21 +181,6 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                     understandings, whether written or oral, relating to the
                     subject matter hereof.
                   </div>
-                  {/* <p className="py-2"></p> */}
-
-                  {/* <div>
-                    <b>
-                      9. ACCEPTANCE:
-                      <br />
-                    </b>
-                    I have read and understood the terms and conditions of this
-                    agreement and hereby accept and agree to be bound by them.
-                    By signing below, I acknowledge that I have had the
-                    opportunity to ask questions and seek clarification about
-                    any terms that I do not fully understand, and that I agree
-                    to comply with all of the obligations set forth in this
-                    agreement.
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -221,7 +189,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
       </div>
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[155px] flex flex-col justify-start items-start bg-blue-30">
+          <div className="w-[80%] h-[90%] absolute top-[160px] flex flex-col justify-start items-start bg-blue-30">
             <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start pb-2">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[17px] font-[500] text-slate-600">
@@ -229,13 +197,10 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-2">
+            <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-3">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   <div>
-                    {/* <p className="py-2"></p>
-
-                    <p className="py-2"></p> */}
                     <div>
                       <b>
                         9. ACCEPTANCE:
@@ -251,7 +216,6 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                     </div>
                     <p className="py-12"></p>
 
-                    {/* <div className="flex justify-between items-center absolut bottom-[450px] w-full bg-green-20 flex-wrap gap-y-3"> */}
                     <div className="flex justify-between items-center absolut bg-red-00 bottom-[550px] w-full bg-green-20 flex-wrap gap-y-3">
                       <span className="bg-red-40 w-[33%">
                         Full Name: {` `}{" "}

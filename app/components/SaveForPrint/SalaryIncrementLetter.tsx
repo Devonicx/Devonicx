@@ -40,14 +40,14 @@ const SalaryIncrementLetterPrint: React.FC = () => {
     <div className="mx-auto w-fit h-fit flex justify-center items-center relative overflow-hidden showOnPrintOnly leading-[23px] text-justify shadow-2xl zooming">
       <div className="w-[215.9mm] h-[279.4mm] bg-image">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[155px] flex flex-col justify-start items-start bg-blue-30">
+          <div className="w-[80%] h-[90%] absolute top-[160px] flex flex-col justify-start items-start bg-blue-30">
             <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start pb-2">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[15px] font-[500] text-slate-600">
                   Page <b>1</b> of <b>1</b>
                 </span>
               </div>
-              <div className="flex flex-col justify-betwenn items-start pt-[10px] pb-[15px]">
+              <div className="flex flex-col justify-betwenn items-start py-3">
                 <h2 className="text-[16px] font-[400]">
                   {data.currentDate.replaceAll("-", "/")}
                 </h2>
