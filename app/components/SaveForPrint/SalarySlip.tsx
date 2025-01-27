@@ -41,9 +41,9 @@ const SalarySlipPrint: React.FC = () => {
   return (
     <div className="mx-auto w-fit h-fit flex flex-col justify-center items-center relative overflow-hidden showOnPrintOnl leading-[23px] text-justify shadow-2xl zooming">
       <div className="w-[215.9mm] h-[279.4mm] h-fi bg-image">
-        <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center bg-red-30">
-          <div className="w-[80%] h-[90%] absolute top-[180px] flex flex-col justify-start items-start bg-blue-30">
-            <div className="w-[100%] h-fit bg-purple-30 flex flex-col justify-between items-start">
+        <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center">
+          <div className="w-[80%] h-[90%] absolute top-[180px] flex flex-col justify-start items-start">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start">
               <div className="w-full flex justify-center items-start">
                 <h1 className="text-[19px] font-[700] underline">
                   SALARY SLIP
@@ -51,10 +51,10 @@ const SalarySlipPrint: React.FC = () => {
               </div>
               <div className="flex flex-col item-start pt-5 pb-[15px] w-full gap-0 bg-red-40">
                 <div className="flex justify-between items-center">
-                  <h2 className="text-[18px] font-bold text-main-blu bg-blue-30">
+                  <h2 className="text-[18px] font-bold text-main-blu">
                     Employee Details:
                   </h2>
-                  <h2 className="text-[18px] font-bold text-main-blu bg-blue-30">
+                  <h2 className="text-[18px] font-bold text-main-blu">
                     Issue Date:{" "}
                     <span className=" text-[16px] font-[500]">
                       {formatDate(data.currentDate)}

@@ -842,7 +842,7 @@ Milestone 2   [30%]   Second Task`
                       }}
                     />
                   </div>
-                  <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative bg-red-30">
+                  <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative">
                     <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
                       <FaAsterisk
                         className={`text-[8px] mt-[4px] w-fit  ${redColor(
@@ -874,7 +874,7 @@ Milestone 2   [30%]   Second Task`
                     </select>
                     <SelectChevron />
                   </div>
-                  <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative bg-red-30">
+                  <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative">
                     <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
                       <FaAsterisk
                         className={`text-[8px] mt-[4px] w-fit  ${redColor(
@@ -905,7 +905,7 @@ Milestone 2   [30%]   Second Task`
                     </select>
                     <SelectChevron />
                   </div>
-                  <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative bg-red-30">
+                  <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative">
                     <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
                       <FaAsterisk
                         className={`text-[8px] mt-[4px] w-fit  ${redColor(
@@ -1452,7 +1452,7 @@ Milestone 2   [30%]   Second Task`
               <h2 className="w-full border-b-[1px] border-color  text-[13px] md:text-[16px] xl:text-[20px] font-[500] px-3 md:px-2  py-1 md:py-2 xl:py-2  mt-7 mb-7 xl:px-3 flex items-center justify-start text-white bg-main-blue">
                 Footer
               </h2>
-              <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative bg-red-30">
+              <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
                   <FaAsterisk
                     className={`text-[8px] mt-[4px] w-fit ${redColor(
