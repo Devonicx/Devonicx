@@ -75,7 +75,7 @@ const AppointmentLetterPrint: React.FC = () => {
                   We are pleased to inform you that, following a comprehensive
                   assessment of your performance during the probationary period,
                   the management has decided to confirm your employment as{" "}
-                  {data.designation} with Soft Enterprise effective from{" "}
+                  {data.designation} with Devonicx effective from{" "}
                   {formatDate(data.startingDate)}.<p className="py-1"></p>
                   {data.comLine
                     ? ` In addition, you will receive a ${data.commission}% commission upon the successful completion of projects on boarded by you, and a 5% commission on projects sourced by teams under your supervision (Referred to commission terms).`
@@ -114,11 +114,11 @@ const AppointmentLetterPrint: React.FC = () => {
                   <p className="py-1"></p>
                   Please note that with this confirmation, you are now entitled
                   to the full range of benefits provided to permanent employees
-                  of Soft Enterprise. Please consult HR Department for the
+                  of Devonicx. Please consult HR Department for the
                   knowledge base of incentives, and medical coverage policies.
                   <p className="py-1"></p>
                   The terms and conditions of your permanent employment will
-                  remain the same as outlined in the Soft Enterprise Employee
+                  remain the same as outlined in the Devonicx Employee
                   Handbook. It is important to familiarize yourself with the
                   policies and guidelines provided in the handbook to ensure a
                   smooth transition into your permanent role.
@@ -150,14 +150,14 @@ const AppointmentLetterPrint: React.FC = () => {
                   <p className="py-1"></p>
                   Once again, congratulations on your successful completion of
                   the probation period, and we look forward to your continued
-                  success with Soft Enterprise.
+                  success with Devonicx.
                   <p className="py-1"></p>
                   <p className="py-1"></p>
                   <p className="py-1"></p>
                   <p className="py-1"></p>
                   Warm Regards,
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

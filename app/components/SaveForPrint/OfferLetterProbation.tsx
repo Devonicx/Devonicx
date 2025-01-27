@@ -74,7 +74,7 @@ const OfferLetterProbationPrint: React.FC = () => {
                   </b>
                   <p className="py-1"></p>
                   It is with great pleasure that we extend to you an offer of
-                  employment with Soft Enterprise as a
+                  employment with Devonicx as a
                   <b> "{formatUperFirst(data.designation)}"</b>. We feel your
                   skills and energy would provide an excellent match with the
                   needs of our organization.

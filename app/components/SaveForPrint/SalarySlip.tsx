@@ -182,7 +182,7 @@ const SalarySlipPrint: React.FC = () => {
               <h2 className="w-[50%] h-fit text-start ">
                 Chief Executive Officer
               </h2>
-              <h2 className="w-[50%] h-fit text-start ">Soft Enterprise</h2>
+              <h2 className="w-[50%] h-fit text-start ">Devonicx</h2>
             </div>
           </div>
         </div>

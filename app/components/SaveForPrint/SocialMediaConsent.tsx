@@ -40,7 +40,7 @@ const SocialMediaConsentPrint: React.FC = () => {
             <div className="w-[100%] h-fit bg-yellow-30 flex flex-col justify-between items-start py-1">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[14px] font-[400] w-full leading-[23px]">
-                  Soft Enterprise uses its Staff/Employee/Internee images on our
+                  Devonicx uses its Staff/Employee/Internee images on our
                   social media profiles (Facebook, LinkedIn, Twitter, Instagram,
                   etc.) for promoting culture and working environment. This form
                   is for the consent purpose of the individual employees that
@@ -86,11 +86,10 @@ const SocialMediaConsentPrint: React.FC = () => {
                       <div className="flex justify-start items-start gap-[3%] w-full h-full ">
                         <div className="w-[20px] h-[20px] bg-red-80 border border-black relative top-[5px]"></div>
                         <span className="w-fit bg-red-40">
-                          I hereby grant Soft Enterprise, to use and publish
+                          I hereby grant Devonicx, to use and publish
                           photographs and videos of myself on their social media
                           profiles for the purpose of promoting the culture and
-                          work environment. In any case, if I leave Soft
-                          Enterprise, I shall have no right to make such demand
+                          work environment. In any case, if I leave Devonicx, I shall have no right to make such demand
                           to remove my images and videos from social media
                           profiles which was published for the purpose that is
                           mentioned above.{" "}
@@ -99,10 +98,10 @@ const SocialMediaConsentPrint: React.FC = () => {
                       <div className="flex justify-start items-start gap-[3%] w-full h-full ">
                         <div className="w-[20px] h-[20px] bg-red-80 border border-black relative top-[5px]"></div>
                         <span className="w-fit bg-red-40">
-                          I do not authorize Soft Enterprise to use my image or
+                          I do not authorize Devonicx to use my image or
                           video in which I appeared on any social profiles for
                           any purpose. In case of group image or group video,
-                          Soft Enterprise must add emoji/blur my face and can
+                          Devonicx must add emoji/blur my face and can
                           use that image or video on their social media
                           profiles.{" "}
                         </span>

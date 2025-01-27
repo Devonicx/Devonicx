@@ -40,7 +40,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   This Non-Disclosure Agreement (the “Agreement”) is made and
-                  entered into by and between <b>Soft Enterprise</b>, with its
+                  entered into by and between <b>Devonicx</b>, with its
                   principal place of business at 53, Quaid Block Commercial,
                   Bahria Town, Lahore (the “Company”), and {` `}
                   <b>

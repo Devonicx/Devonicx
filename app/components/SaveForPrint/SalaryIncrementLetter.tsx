@@ -73,7 +73,7 @@ const SalaryIncrementLetterPrint: React.FC = () => {
                   </b>
                   <p className="py-1"></p>
                   Based on your hard work, dedication, and contributions to the
-                  success of Soft Enterprise, we are pleased to announce that
+                  success of Devonicx, we are pleased to announce that
                   effective {formatDate(data.effectiveDate)}, your salary is
                   increased. This adjustment reflects our recognition of your
                   valuable contributions and your continued growth within the
@@ -134,7 +134,7 @@ const SalaryIncrementLetterPrint: React.FC = () => {
                   <br />
                   Human Resource
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

@@ -70,7 +70,7 @@ const StipendIncrementLetterPrint: React.FC = () => {
                     Rupees Only).
                   </b>
                   <p className="py-1"></p>
-                  Soft Enterprise always appreciate their employees on hard
+                  Devonicx always appreciate their employees on hard
                   work. We believe that this increment in your stipend motivates
                   you to fulfill your responsibilities in appropriate way.
                   {data.addLine ? (
@@ -86,7 +86,7 @@ const StipendIncrementLetterPrint: React.FC = () => {
                   <br />
                   Human Resource
                   <br />
-                  Soft Enterprise{" "}
+                  Devonicx{" "}
                 </div>
               </div>
             </div>

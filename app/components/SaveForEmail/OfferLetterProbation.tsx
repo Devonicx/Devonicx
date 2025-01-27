@@ -14,7 +14,7 @@ const OfferLetterProbationEmail: React.FC = () => {
 I hope you're doing well.\n
 Thank you for applying for the ${formatUperFirst(
     data.designation
-  )} position at Soft Enterprise. I am happy to inform you that we have selected you for the position. Your knowledge, skills, and experience align perfectly with our company's requirements and culture.\n
+  )} position at Devonicx. I am happy to inform you that we have selected you for the position. Your knowledge, skills, and experience align perfectly with our company's requirements and culture.\n
 Please find the job offer letter attached, and kindly respond by ${
     data.responseDate
   } with your acceptance or rejection. Please remember that we ask for your response before the given time, as the offer letter will be considered void after the timeframe. If you plan to accept the job offer letter, kindly bring the following mandatory documents copies with you on the first day of joining:\n
@@ -24,12 +24,12 @@ Please find the job offer letter attached, and kindly respond by ${
 · Last Degree Certification Copy 
 · Last Experience Letter (if any)\n
 Our current office timings are 9:00 AM to 6:00 PM. If you have any questions or concerns, please don't hesitate to contact us.\n
-Thank you again for your interest in Soft Enterprise, and we are excited to hear back from you.\n
+Thank you again for your interest in Devonicx, and we are excited to hear back from you.\n
 Best regards,`;
 
   const handleCopyClick = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(`Job Offer Letter - Soft Enterprise\n
+      await navigator.clipboard.writeText(`Job Offer Letter - Devonicx\n
 ${text}`);
     } catch (error) {
       console.error("Failed to copy:", error);
@@ -43,7 +43,7 @@ ${text}`);
     >
       <div className=" w-[870px] h-[500px h-fit bg-white  rounded-2xl flex flex-col justify-between email-position">
         <h2 className="w-[100%] h-[50px] px-16 border-b-[1px] border-color text-[14px] md:text-[20px] xl:text-[26px] font-[700] flex items-center justify-start">
-          Offer Letter Probation - Soft Enterprise
+          Offer Letter Probation - Devonicx
         </h2>
         <div className="flex flex-col justify-start items-start">
           <p

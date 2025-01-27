@@ -131,17 +131,17 @@ Milestone 2   [30%]   Second Task`
   let [writtenByText1, setwrittenByText1] = useState(
     `Mohammad Rehan Arshad
 Chief Executive Officer
-Soft Enterprise`
+Devonicx`
   );
   let [writtenByText2, setwrittenByText2] = useState(
     `Haseeb Arkam
 Chief Technical Officer
-Soft Enterprise`
+Devonicx`
   );
   let [writtenByText3, setwrittenByText3] = useState(
     `[Name]
 Project Manager
-Soft Enterprise`
+Devonicx`
   );
 
   let [isVerified, setIsVerified] = useState<any>(undefined);

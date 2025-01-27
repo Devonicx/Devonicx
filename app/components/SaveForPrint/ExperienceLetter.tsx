@@ -45,7 +45,7 @@ const ExperienceLetterPrint: React.FC = () => {
                   This is to certify that {" "}
                   {data.gender === "Male" ? "Mr." : "Ms."}{" "}
                   {formatUperFirst(data.name)} worked as a{" "}
-                  {formatUperFirst(data.designation)} with Soft Enterprise from{" "}
+                  {formatUperFirst(data.designation)} with Devonicx from{" "}
                   {formatDate(data.startingDate)} to{" "}
                   {formatDate(data.endingDate)}.<p className="py-1"></p>
                   <p className="py-1"></p>
@@ -65,7 +65,7 @@ const ExperienceLetterPrint: React.FC = () => {
                   <br />
                   Chief Executive Officer
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

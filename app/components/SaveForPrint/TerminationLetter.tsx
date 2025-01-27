@@ -53,10 +53,10 @@ const TerminationLetterPrint: React.FC = () => {
                   </b>
                   <p className="py-1"></p>
                   It is with regret that I must inform you that your employment
-                  with Soft Enterprise is being terminated as per section{" "}
+                  with Devonicx is being terminated as per section{" "}
                   {data.section} of Employee Handbook effective{" "}
                   {formatDate(data.startingDate)}. We appreciate your
-                  contribution during your time with Soft Enterprise, and we
+                  contribution during your time with Devonicx, and we
                   wish you the best in your future endeavors!
                   <p className="py-1"></p>
                   {data.comments?.trim() !== "" ? (
@@ -74,7 +74,7 @@ const TerminationLetterPrint: React.FC = () => {
                   <br />
                   Human Resource
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

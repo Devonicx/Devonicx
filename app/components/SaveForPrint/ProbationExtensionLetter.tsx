@@ -75,7 +75,7 @@ const ProbationExtensionLetterPrint: React.FC = () => {
                   <p className="py-1"></p>
                   We would like to take this opportunity to provide you with
                   feedback on your performance during the probationary period at
-                  Soft Enterprise. After careful evaluation, we have decided to
+                  Devonicx. After careful evaluation, we have decided to
                   extend your probationary period for{" "}
                     {`${data.probationPeriod === "1" ? "an" : ""}`} additional{" "}
                   <b>
@@ -141,7 +141,7 @@ const ProbationExtensionLetterPrint: React.FC = () => {
                   <br />
                   Human Resource
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

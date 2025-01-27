@@ -274,7 +274,7 @@ ${insertBreaks(
                   <span>between</span>
                 </p>
                 <div>
-                  <b>Soft Enterprise</b>, with its principal place of business
+                  <b>Devonicx</b>, with its principal place of business
                   at 53, Hamza Heights, Quaid Block Commercial Bahria Town,
                   Lahore, Pakistan, hereinafter referred to as "Client," and{" "}
                   <b> {formatUperFirst(data.name)}</b>, having CNIC{" "}

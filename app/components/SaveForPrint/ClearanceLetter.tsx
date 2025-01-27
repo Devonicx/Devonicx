@@ -216,7 +216,7 @@ const ClearanceLetterPrint: React.FC = () => {
                   Upon separation, I understand that I have an ongoing
                   responsibility to maintain the confidentiality Of
                   Non-Disclosure Agreement that I had signed upon my joining
-                  with Soft Enterprise.
+                  with Devonicx.
                   <div className="pt-10 flex justify-between items-center absolut bottom-[250px] w-full">
                     <span className=" flex flex-col items-center">
                       <span className=" flex flex-col">
@@ -254,7 +254,7 @@ const ClearanceLetterPrint: React.FC = () => {
                   Upon separation, I understand that I have an ongoing
                   responsibility to maintain the confidentiality Of
                   Non-Disclosure Agreement that I had signed upon my joining
-                  with Soft Enterprise.
+                  with Devonicx.
                   <div className="pt-10 flex justify-between items-center absolut bottom-[250px] w-full">
                     <span className=" flex flex-col items-center">
                       <span className=" flex flex-col">

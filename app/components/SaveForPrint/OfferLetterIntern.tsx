@@ -83,11 +83,11 @@ const OfferLetterInternPrint: React.FC = () => {
                   solely depends upon your performance and learning within the
                   internship duration.
                   <p className="py-1"></p>
-                  In case of excessive leaves without approval, Soft Enterprise
+                  In case of excessive leaves without approval, Devonicx
                   has right to <b>freeze</b> your internship certificate until
                   you complete the days of your internship.
                   <p className="py-1"></p>
-                  During your temporary employment with Soft Enterprise, you may
+                  During your temporary employment with Devonicx, you may
                   have access to trade secrets and confidential or proprietary
                   business information belonging to the company. You must
                   acknowledge to sign a separate
@@ -101,7 +101,7 @@ const OfferLetterInternPrint: React.FC = () => {
                   <p className="py-1"></p>
                   Warm Regards,
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

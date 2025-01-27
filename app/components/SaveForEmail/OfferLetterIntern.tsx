@@ -14,7 +14,7 @@ const OfferLetterInternEmail: React.FC = () => {
 I hope you're doing well.\n
 I am grateful for your interest in the ${formatUperFirst(
     data.hiring
-  )} Intern position at Soft Enterprise. I am delighted to inform you that you have been selected for the position. Your knowledge and skills align perfectly with our company's requirements and culture.\n
+  )} Intern position at Devonicx. I am delighted to inform you that you have been selected for the position. Your knowledge and skills align perfectly with our company's requirements and culture.\n
 I've attached the internship offer letter for you; please reply by ${
     data.responseDate
   } with your acceptance or rejection. So that you know, we'd like your response before the given time since the offer letter will be considered void after the timeframe. If you plan to accept the Internship offer letter, we would appreciate you bringing copies of the mandatory documents with you on the first day of joining. These include:\n
@@ -30,7 +30,7 @@ Best regards,`;
   const handleCopyClick = async (text: string) => {
     try {
       await navigator.clipboard
-        .writeText(`Internship Offer Letter - Soft Enterprise\n
+        .writeText(`Internship Offer Letter - Devonicx\n
 ${text}`);
     } catch (error) {
       console.error("Failed to copy:", error);
@@ -41,7 +41,7 @@ ${text}`);
     <div className="w-[100%] h-full flex justify-center items-start bg-[rgba(0,0,0,0.5)] absolute top-[0px]  text-[12px] md:text-[14px] xl:text-[17px]  leading-[normal]">
       <div className="w-[95%] md:w-[870px] h-fit bg-white  rounded-2xl flex flex-col justify-between email-position">
         <h2 className="w-[100%] h-[50px]  px-3 md:px-8 xl:px-16 border-b-[1px] border-color  text-[14px] md:text-[20px] xl:text-[26px]  font-[700] flex items-center justify-start">
-          Internship Offer Letter - Soft Enterprise
+          Internship Offer Letter - Devonicx
         </h2>
         <div className="flex flex-col justify-start items-start">
           <p

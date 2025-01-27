@@ -54,7 +54,7 @@ const InternshipExtensionLetterPrint: React.FC = () => {
                   </b>
                   <p className="py-1"></p>
                   We appreciate the dedication and enthusiasm you have shown
-                  during your internship at Soft Enterprise.
+                  during your internship at Devonicx.
                   {`${
                     data.reason === "Lack of knowledge"
                       ? "We would like to inform you that, based on our assessment of the knowledge acquired during your internship"
@@ -110,7 +110,7 @@ const InternshipExtensionLetterPrint: React.FC = () => {
                 <div className="text-[16px] font-[400] leading-[23px]">
                   <p className="py-1"></p>
                   We appreciate your continued commitment and dedication to your
-                  role as an intern at Soft Enterprise. We look forward to the
+                  role as an intern at Devonicx. We look forward to the
                   valuable contributions you will make during the extended
                   period. Thank you for your understanding and cooperation.
                   <p className="py-1"></p>
@@ -118,7 +118,7 @@ const InternshipExtensionLetterPrint: React.FC = () => {
                   <br />
                   Human Resource
                   <br />
-                  Soft Enterprise
+                  Devonicx
                 </div>
               </div>
             </div>

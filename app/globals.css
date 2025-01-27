@@ -221,7 +221,7 @@ th {
 } */
 .bg-image {
   background-size: cover;
-  background-image: url("../public/images/bg-image.png");
+  background-image: url("../public/images/bg-image.svg");
 }
 
 @media (max-width: 850px) {
