@@ -204,6 +204,7 @@ const ClearanceLetter: React.FC = () => {
   useEffect(() => {
     dispatch(setPrintShowR(showPrint));
   }, [showPrint]);
+console.log(data);
 
   return (
     <>
