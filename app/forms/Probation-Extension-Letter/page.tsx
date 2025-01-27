@@ -206,7 +206,7 @@ const ProbationExtensionLetter: React.FC = () => {
   useEffect(() => {
     dispatch(setPrintShowR(showPrint));
   }, [showPrint]);
-  console.log(data.commission);
+  console.log(data);
 
   return (
     <>

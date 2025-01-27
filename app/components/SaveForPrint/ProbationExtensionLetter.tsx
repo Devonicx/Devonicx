@@ -127,10 +127,9 @@ const ProbationExtensionLetterPrint: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-1">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start py-2">
               <div className="w-full flex justify-center items-start">
                 <div className="text-[16px] font-[400] leading-[23px]">
-                  <p className="py-1"></p>
                   During the extended probationary period, we expect you to
                   continue to demonstrate your skills, commitment, and ability
                   to meet the performance expectations of your position. You
