@@ -110,22 +110,17 @@ const Login: React.FC<AllowanceInputProps> = ({
             )}
           </div>
         </div>
-        <div className="w-full flex justify-end items-center bg-red-40 pt-1">
-          {/* <button
-            className="w-fit text-end px-3 text-[11px] sm:text-[13px] bg-red-60 hover:underline"
-            onClick={() => dispatch(setForgetToggleR(true))}
-          >
-            Change Password
-          </button> */}
+        <div className="w-full flex justify-end items-center pt-1">
+
           <button
-            className="w-fit text-end pe-3 text-[11px] sm:text-[13px] bg-red-60 hover:underline"
+            className="w-fit text-end pe-3 text-[11px] sm:text-[13px] hover:underline"
             onClick={() => dispatch(setLoginToggleR(false))}
           >
             Change Password
           </button>
           <div className="border-l-[2px] border-black size-3"></div>
           <button
-            className="w-fit text-end ps-0 pe- text-[11px] sm:text-[13px] bg-red-60 hover:underline"
+            className="w-fit text-end ps-0 pe- text-[11px] sm:text-[13px] hover:underline"
             onClick={() => dispatch(setForgetToggleR(true))}
           >
             Forgot Password ?

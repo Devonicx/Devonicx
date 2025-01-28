@@ -66,7 +66,7 @@ const DeductionInputs: React.FC<DeductionInputProps> = ({ index }) => {
         />
         <button
           onClick={deleteDeduction}
-          className="w-[20px] md:w-[30px] h-[20px] md:h-[30px] flex justify-between items-center bg-red-40 absolute right-0"
+          className="w-[20px] md:w-[30px] h-[20px] md:h-[30px] flex justify-between items-center absolute right-0"
         >
           <FaMinusCircle
             className="w-[100%] h-[100%] text-gray-700"

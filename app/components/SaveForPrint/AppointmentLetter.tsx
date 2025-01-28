@@ -40,7 +40,7 @@ const AppointmentLetterPrint: React.FC = () => {
     <div className="mx-auto w-fit h-fit flex flex-col justify-center items-center relative overflow-hidden showOnPrintOnl leading-[23px] text-justify shadow-2xl zooming">
       <div className="w-[215.9mm] h-[279.4mm] bg-image">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center">
-          <div className="w-[80%] h-[90%] absolute top-[160px] bg-red-60 flex flex-col justify-start items-start">
+          <div className="w-[80%] h-[90%] absolute top-[160px] flex flex-col justify-start items-start">
             <div className="w-[100%] h-fit flex flex-col justify-between items-start pb-2">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[15px] font-[500] text-slate-600">

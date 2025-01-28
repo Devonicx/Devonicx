@@ -121,26 +121,6 @@ const StipendIncrementLetter: React.FC = () => {
     };
   }
 
-  // function sameData() {
-  //   if (data.newDataChecker) {
-  //     if (
-  //       gender === data.newDataChecker.gender &&
-  //       name === data.newDataChecker.name &&
-  //       currentDate === data.newDataChecker.currentDate &&
-  //       address === data.newDataChecker.address &&
-  //       effectiveDate === data.newDataChecker.effectiveDate &&
-  //       addLine === data.newDataChecker.addLine &&
-  //       newStipend === data.newDataChecker.newStipend &&
-  //       newStipendInWords === data.newDataChecker.newStipendInWords
-  //     ) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   function regenerate(newData: any) {
     setGender(newData.gender);

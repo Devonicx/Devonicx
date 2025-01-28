@@ -21,10 +21,10 @@ const Nav: React.FC = () => {
   return (
     <div className="w-full h-[88px] border-[1px] border-color hideOnPrint sticky top-[0px] z-[100] bg-white">
       <div className="flex justify-between items-center w-[95%] 2xl:w-[87%] h-full mx-auto bg-pink-80">
-        <div className="w-fit flex justify-start bg-yellow-40">
+        <div className="w-fit flex justify-start ">
           <Link
             href={"/"}
-            className="w-[130px] sm:w-[190px] md:w-[250px] h-[55px] flex justify-start items-center bg-yellow-40"
+            className="w-[100px] sm:w-[180px] md:w-[200px] flex justify-start items-center"
           >
             <img src={logo.src} className="w-full h-full" />
           </Link>

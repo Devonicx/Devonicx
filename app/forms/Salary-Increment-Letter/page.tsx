@@ -363,7 +363,7 @@ const SalaryIncrementLetter: React.FC = () => {
                 />
               </div>
               <div className="w-[100%]">
-                <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center bg-red-20">
+                <div className="w-[100%] md:w-[45%]  h-[70px] flex justify-between  items-center ">
                   <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px] font-[500] relative mb-2 md:mb-0">
                     Allowance
                   </label>

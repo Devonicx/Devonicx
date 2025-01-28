@@ -131,8 +131,7 @@ const ChangePassword: React.FC = () => {
         >
           {changePasswordMsg ? changePasswordMsg : changePasswordError}
         </p>
-        {/* <div className="w-full bg-green-00 flex justify-end items-end"> */}
-        {/* </div> */}
+  
       </div>
       <button
         className={`${

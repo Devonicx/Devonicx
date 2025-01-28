@@ -134,7 +134,7 @@ export default function RecentRecordUsers() {
                               {item.forms.map((item2: any, key: number) => (
                                 <div
                                   key={key}
-                                  className="text-start flex justify-start items-center w-[80%] bg-red-00 ms-[20px]"
+                                  className="text-start flex justify-start items-center w-[80%] ms-[20px]"
                                 >
                                   <ol className="list-disc list-inside mx-au text-start flex justify-start items-center bg-green-00">
                                     {!item2.includes("time:-") ? (

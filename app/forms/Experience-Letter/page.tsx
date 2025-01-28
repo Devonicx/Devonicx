@@ -108,25 +108,6 @@ const ExperienceLetter: React.FC = () => {
       saveRecord();
     };
   }
-  // function sameData() {
-  //   if (data.newDataChecker) {
-  //     if (
-  //       gender === data.newDataChecker.gender &&
-  //       name === data.newDataChecker.name &&
-  //       currentDate === data.newDataChecker.currentDate &&
-  //       designation === data.newDataChecker.designation &&
-  //       refNo === data.newDataChecker.refNo &&
-  //       startingDate === data.newDataChecker.startingDate &&
-  //       endingDate === data.newDataChecker.endingDate
-  //     ) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   function regenerate(newData: any) {
     setGender(newData.gender);

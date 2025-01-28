@@ -69,7 +69,6 @@ const TerminationLetterPrint: React.FC = () => {
                   {formatDate(data.endingDate)} for your clearance and bring any
                   assets, project materials, etc that you have.
                   <p className="py-1"></p>
-                  {/* <p className="py-1"></p> */}
                   Warm Regards,
                   <br />
                   Human Resource

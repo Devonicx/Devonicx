@@ -107,24 +107,6 @@ const NonDisclosureAgreement: React.FC = () => {
     };
   }
 
-  // function sameData() {
-  //   if (data.newDataChecker) {
-  //     if (
-  //       gender === data.newDataChecker.gender &&
-  //       currentDate === data.newDataChecker.currentDate &&
-  //       name === data.newDataChecker.name &&
-  //       fatherName === data.newDataChecker.fatherName &&
-  //       cnic === data.newDataChecker.cnic
-  //     ) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   function regenerate(newData: any) {
     setGender(newData.gender);
     setCurrentDate(newData.currentDate);

@@ -98,24 +98,6 @@ const SocialMediaConsent: React.FC = () => {
     };
   }
 
-  // function sameData() {
-  //   if (data.newDataChecker) {
-  //     if (
-  //       name === data.newDataChecker.name &&
-  //       currentDate === data.newDataChecker.currentDate &&
-  //       designation === data.newDataChecker.designation &&
-  //       cnic === data.newDataChecker.cnic &&
-  //       employeeId === data.newDataChecker.employeeId
-  //     ) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   function regenerate(newData: any) {
     setName(newData.name);
     setCurrentDate(newData.currentDate);

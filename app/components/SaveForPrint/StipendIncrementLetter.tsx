@@ -16,8 +16,6 @@ const StipendIncrementLetterPrint: React.FC = () => {
     const title = `Stipend Increment Letter - ${data.name}`;
     document.title = title;
   }, [data.name]);
-// console.log(numberToWords(Number(data.newStipend.replaceAll(",", ""))));
-// console.log(Number(data.newStipend.replaceAll(",", "")));
 
   return (
     <div className="mx-auto w-fit h-fit  flex justify-center items-center relative overflow-hidden showOnPrintOnly leading-[23px] text-justify shadow-2xl zooming">

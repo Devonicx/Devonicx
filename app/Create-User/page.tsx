@@ -311,13 +311,6 @@ export default function CreateUser() {
                   <div
                     className={`w-[100%] md:w-[100%] h-[45px] rounded-[10px] px-3 border- border-color flex justify-start items-center gap-[10px]  text-[12px] md:text-[14px] xl:text-[18px]`}
                   >
-                    {/* <input
-                  type="checkbox"
-                  className="w-[20px] h-[20px]"
-                  onChange={(e) => selectAll(e)}
-                  checked={formsArray.includes("Contract") ? true : false}
-                  name="Contract"
-                  /> */}
                     <label className="font-bold">PROMOTIONAL DOCUMENTS</label>
                   </div>
 
@@ -456,13 +449,6 @@ export default function CreateUser() {
                   <div
                     className={`w-[100%] md:w-[100%] h-[45px] rounded-[10px] px-3 border- border-color flex justify-start items-center gap-[10px]  text-[12px] md:text-[14px] xl:text-[18px]`}
                   >
-                    {/* <input
-                  type="checkbox"
-                  className="w-[20px] h-[20px]"
-                  onChange={(e) => selectAll(e)}
-                  checked={formsArray.includes("Contract") ? true : false}
-                  name="Contract"
-                /> */}
                     <label className="font-bold">
                       OTHER BUSINESS DOCUMENTS
                     </label>
@@ -488,20 +474,7 @@ export default function CreateUser() {
                   />
                   Admin Password:
                 </label>
-                {/* <input
-                  placeholder="Enter Admin Password"
-                  type="password"
-                  className={`w-[60%] text-[12px] md:text-[14px] xl:text-[18px]  h-[45px] rounded-[10px] px-3 border-2 ${redBorder(
-                    adminpassword,
-                    fieldEmpty,
-                    printClicked
-                    )}`}
-                    value={adminpassword}
-                  onChange={(e) => {
-                    setAdminPassword(e.target.value);
-                  }}
-                />
-              </div> */}
+  
                 <div
                   className={`flex justify-end items-center bg-white relative w-[60%] text-[12px] md:text-[14px] xl:text-[18px]  h-[45px] rounded-[10px] overflow-hidden border-2 ${redBorder(
                     adminpassword,
@@ -544,7 +517,6 @@ export default function CreateUser() {
                     adminpassword,
                   });
 
-                  // createUser();
                 }}
                 disabled={buttonDisable}
               >
@@ -553,7 +525,6 @@ export default function CreateUser() {
             </div>
           </div>
 
-          {/* <RecentRecordUsers /> */}
         </div>
       )}
     </>

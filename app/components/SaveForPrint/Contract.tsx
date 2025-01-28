@@ -38,32 +38,8 @@ const ContractPrint: React.FC = () => {
 
     return result;
   }
-  //   *lb</br>
-  //                 <div>
-  //                   *lb</br>
-  //                   <b id="b">7. Ownership of Work</b></br> *lb
-  // ${insertBreaks(
-  //   `All work performed under this Agreement will be the sole property of the <b></b>. The Service Provider will turn over all related files and credentials upon completion of the project.`,
-  //   100
-  // )}
-  //  *lb
-  //                 </div>
-  //   <div>
-  //               </br>
-  //                <b id="b">2. Scope of Work</b></br> *lb
-  // ${insertBreaks(data.workScope, 90)} *lb
-  //              </div>
-  //              *lb</br>
-  // let compensation =
-  //   "The total payment for the services provided under this Agreement shall be " +
-  //   data.amount +
-  //   " (" +
-  //   data.currency +
-  //   ") " +
-  //   "(payment after the platform fee). This fee will be payable upon successful completion of the project as outlined in the Scope of Work and Deliverables.";
   let splitedPaymentText = data.paymentText?.split("\n");
   let splitedDeadlineText = data.deadlineText?.split("\n");
-
 
   const combinedData = `<div>
               *lb</br> 
@@ -170,7 +146,7 @@ ${insertBreaks(
                     </div>
                     `;
   console.log(combinedData);
-  
+
   let titleLength = insertBreaks(data.title, 60).split(" *lb").length;
   let combinedDataArray = combinedData?.split(" *lb");
   let combinedDataLength = combinedDataArray.length + titleLength;
@@ -181,34 +157,11 @@ ${insertBreaks(
     setPageLength(Math.ceil((combinedDataLength - 20) / 29) + 2);
   }, [pageLength]);
   useEffect(() => {
-    // combinedDataArray(combinedDataArray);
   }, [combinedData]);
 
-  // useEffect(() => {
-  //   if (data.deliverables) {
-  //     let splited = combinedDataArray;
-  //     for (let i = 0; i < splited.length; i++) {
-  //       if (i === 19) {
-  //         if (splited[19].includes(`<b id="b">`)) {
-  //           splited.splice(i, 0, " *lb ");
-  //           // splited.splice(i+1, 0, " *lb </br> *lb </br> *lb </br>");
-  //           combinedDataArray(splited);
-  //         }
-  //       } else if ((i - 19) % 29 === 0) {
-  //         if (splited[i].includes(`<b id="b">`)) {
-  //           splited.splice(i, 0, " *lb ");
-  //           // splited.splice(i+1, 0, " *lb </br> *lb </br> *lb </br>");
-  //           combinedDataArray(splited);
-  //           console.log(splited[i]);
-  //           console.log(splited[i + 1]);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }, [data.deliverables]);
 
   return (
-    <div className="mx-auto w-fit h-fit bg-red-10 flex flex-col justify-center items-center relative  showOnPrintOnl overflow-hidden shadow-2xl leading-[23px] text-justify zooming">
+    <div className="mx-auto w-fit h-fit flex flex-col justify-center items-center relative  showOnPrintOnl overflow-hidden shadow-2xl leading-[23px] text-justify zooming">
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-full absolute top-[0%] z-[50] flex justify-center items-center">
           <div className="w-[80%] h-[90%] absolute top-[140px] flex flex-col justify-start items-start">
@@ -242,21 +195,17 @@ ${insertBreaks(
                     .split(" *lb")
                     .map((item) => (
                       <>
-                        <span className="p-0 m-0 w-[100%] text-justify  bg-red-20 ">
-                          {/* {item.split(" ").map((item2: any) => (
-                            <div className="bg-purple-600">{item2}</div>
-                          ))} */}
+                        <span className="p-0 m-0 w-[100%] text-justify  ">
                           {formatUperFirst(item)}
                         </span>
                         <br />
                       </>
                     ))}
-                  {/* {data.title} */}
                 </h1>
               </div>
               <h3 className="pt-5 w-full">
                 <p
-                  className="w-full bg-red-20 text-justify flex justify-between items-center p-0"
+                  className="w-full text-justify flex justify-between items-center p-0"
                   style={{ textAlign: "justify" }}
                 >
                   <span>This</span>
@@ -296,7 +245,7 @@ ${insertBreaks(
                         <>
                           {item.includes(`<b id="b">`) ? (
                             <>
-                              <div className="h-[380px] flex bg-red-20 items-end justify-end bg-red-20">
+                              <div className="h-[380px] flex items-end justify-end ">
                                 <span className="text-[15px] font-[500] text-slate-600 mb-4">
                                   Page <b>2</b> of{" "}
                                   <b>
@@ -309,7 +258,7 @@ ${insertBreaks(
                             </>
                           ) : (
                             <>
-                              <div className="h-[380px] flex bg-red-20 items-end justify-end bg-red-20">
+                              <div className="h-[380px] flex items-end justify-end ">
                                 <span className="text-[15px] font-[500] text-slate-600 mb-4">
                                   Page <b>2</b> of{" "}
                                   <b>
@@ -325,7 +274,7 @@ ${insertBreaks(
                       ) : (index - (20 - titleLength)) % 29 === 0 ? (
                         <>
                           {item.includes(`<b id="b">`) ? (
-                            <div className="h-[390px] flex bg-red-40 items-end justify-end">
+                            <div className="h-[390px] flex items-end justify-end">
                               <span className="text-[15px] font-[500] text-slate-600 mb-4">
                                 Page <b>{Math.ceil(index / 29) + 1}</b> of{" "}
                                 <b>
@@ -336,7 +285,7 @@ ${insertBreaks(
                               </span>
                             </div>
                           ) : (
-                            <div className="h-[390px] flex bg-red-40 items-end justify-end">
+                            <div className="h-[390px] flex items-end justify-end">
                               <span className="text-[15px] font-[500] text-slate-600 mb-4">
                                 Page <b>{Math.ceil(index / 29) + 1}</b> of{" "}
                                 <b>
@@ -359,7 +308,6 @@ ${insertBreaks(
                                   __html: item.replace("*lb", ` `),
                                 }}
                               ></div>
-                              {/* rerf */}
                             </>
                           ) : (
                             <>
@@ -369,7 +317,6 @@ ${insertBreaks(
                                   __html: item.replace("*lb", ` `),
                                 }}
                               ></div>
-                              {/* rerf */}
                             </>
                           )}
                         </>

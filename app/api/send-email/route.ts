@@ -12,7 +12,6 @@ export async function POST(req: Request) {
   }
   let passwordData = await prisma.registration.findMany();
 
-  // Create a transporter
   let transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: Number(process.env.EMAIL_PORT),
@@ -23,7 +22,6 @@ export async function POST(req: Request) {
     },
   });
 
-  // Email options
   let mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.ADMIN_EMAIL,
@@ -33,7 +31,6 @@ Username: ${passwordData[0].username}
 Password: ${passwordData[0].password}`,
   };
 
-  // Send email
   try {
     if (passwordData) {
       await transporter.sendMail(mailOptions);

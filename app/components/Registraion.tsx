@@ -26,7 +26,6 @@ const Registration: React.FC<AllowanceInputProps> = ({
   setTokenVerifierTrigger,
   setUserId,
 }) => {
-  // let [loginToggle, setLoginToggle] = useState(true);
   let global = useSelector((state: RootState) => state.Global);
   async function getData() {
     let result = await axios.post(`/api/registraion`);
@@ -37,12 +36,12 @@ const Registration: React.FC<AllowanceInputProps> = ({
   }, []);
   return (
     <div
-      className="w-full custom-b h-[100vh bg-red-40 overflow-hidden"
+      className="w-full custom-b h-[100vh overflow-hidden"
       style={{ height: "calc(100vh - 88px)" }}
     >
       <div className="flex justify-center items-center w-full bg-blue-30 h-full overflow-hidden relative">
         {!global.forgetToggle ? (
-          <div className="flex flex-col-reverse sm:flex-row items-center w-[95%] 2xl:w-[87%] h-[90%] rounded-2xl overflow-hidden custom-b z-[100] bg-red-20 box">
+          <div className="flex flex-col-reverse sm:flex-row items-center w-[95%] 2xl:w-[87%] h-[90%] rounded-2xl overflow-hidden custom-b z-[100] box">
             <div className="sm:w-[40%] w-full h-[35%] sm:h-full flex flex-col justify-center items-center bg-[rgb(39,65,107)] relative overflow-hidden">
               <img
                 src={shape2.src}
@@ -64,8 +63,7 @@ const Registration: React.FC<AllowanceInputProps> = ({
                   Welcome Back!
                 </h2>
                 <p className="text-center text-white text-[13px] md:text-[16px] sm:pb-2 w-[80%] mx-auto font-[400]">
-                  {/* Welcome to the HRM Data Handler! Simplifying and streamlining
-                  your human resources management effortlessly.{" "} */}
+                 
                   Welcome to the HRM Data Handler! Effortlessly simplifying and
                   streamlining your human resources management.
                 </p>

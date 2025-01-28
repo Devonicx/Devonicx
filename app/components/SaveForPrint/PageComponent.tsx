@@ -28,23 +28,20 @@ const Print: React.FC<printType> = ({
     const doc = new jsPDF({
       orientation: "portrait",
       unit: "mm",
-      format: [210, 297], // A4 size (consider options.format for customization)
+      format: [210, 297], 
     });
 
     const imgProps = doc.getImageProperties(imgData);
     const width = doc.internal.pageSize.getWidth();
     const height = (imgProps.height * width) / imgProps.width;
-
-    // doc.addImage(imgData, "PNG", 0, options.paddingTop, width, height);
     try {
-      doc.addImage(imgData, "PNG", 0, options.paddingTop, width, height); // Adjust coordinates as needed
+      doc.addImage(imgData, "PNG", 0, options.paddingTop, width, height); 
       doc.save("my_pdf.pdf");
     } catch (error) {
       console.error("Error adding image:", error);
-      // Handle the error gracefully, e.g., display an error message to the user
     }
     doc.autoPrint();
-    doc.save("dynamic-print.pdf"); // Optional: Save as PDF
+    doc.save("dynamic-print.pdf"); 
 
     setIsPrinting(false);
   };

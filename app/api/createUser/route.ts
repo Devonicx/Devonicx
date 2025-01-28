@@ -6,9 +6,8 @@ export async function POST(req: Request) {
     let { username, password, formsArray, adminpassword } = await req.json();
     let now = new Date();
 
-    // Format date
     let day: any = now.getDate();
-    let month: any = now.getMonth() + 1; // Months are zero-based
+    let month: any = now.getMonth() + 1;
     let year: any = now.getFullYear();
 
     day = day < 10 ? "0" + day : day;

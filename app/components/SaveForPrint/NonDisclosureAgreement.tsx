@@ -100,7 +100,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
       <div className="w-[215.9mm] h-[279.4mm] bg-image relative">
         <div className="w-[100%] h-[100%] absolute top-[0%] z-[50] flex justify-center items-center">
           <div className="w-[80%] h-[90%] absolute top-[160px] flex flex-col justify-start items-start">
-            <div className="w-[100%] h-fit flex flex-col justify-between items-start pb-2 bg-red-60">
+            <div className="w-[100%] h-fit flex flex-col justify-between items-start pb-2 ">
               <div className="w-full flex justify-end items-start">
                 <span className="text-[17px] font-[500] text-slate-600">
                   Page <b>2</b> of <b>3</b>
@@ -215,7 +215,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                     </div>
                     <p className="py-12"></p>
 
-                    <div className="flex justify-between items-center absolut bg-red-00 bottom-[550px] w-full bg-green-20 flex-wrap gap-y-3">
+                    <div className="flex justify-between items-center absolut bottom-[550px] w-full bg-green-20 flex-wrap gap-y-3">
                       <span className="bg-red-40 w-[33%">
                         Full Name: {` `}{" "}
                         <span className="border-b border-black">

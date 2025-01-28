@@ -49,7 +49,7 @@ const SalarySlipPrint: React.FC = () => {
                   SALARY SLIP
                 </h1>
               </div>
-              <div className="flex flex-col item-start pt-5 pb-[15px] w-full gap-0 bg-red-40">
+              <div className="flex flex-col item-start pt-5 pb-[15px] w-full gap-0 ">
                 <div className="flex justify-between items-center">
                   <h2 className="text-[18px] font-bold text-main-blu">
                     Employee Details:
@@ -69,17 +69,14 @@ const SalarySlipPrint: React.FC = () => {
                   <span className="font-[600">CNIC: </span>
                   {data.cnic}
                 </h2>
-                {/* <h2 className="text-[16px] font-[400]">
-                  <span className="font-[600">Month: </span>
-                  {formatDateToMonthYear(data.month)}
-                </h2> */}
+       
                 <h2 className="text-[16px] font-[400]">
                   <span className="font-[600">Designation: </span>
                   {formatUperFirst(data.designation)}
                 </h2>
               </div>
             </div>
-            <div className="flex flex-col justify-betwenn items-start mt-8 w-full text-[16px] font-[400] relative bg-red-80">
+            <div className="flex flex-col justify-betwenn items-start mt-8 w-full text-[16px] font-[400] relative ">
               <div className="w-full h-fit bg-gray-200 flex justify-start border-[0.5px] border-color py-1 text-[16px] font-bold relative">
                 <div className="h-[100%] absolute left-[25%] bg-black top-0 border-e-2 border-color"></div>
                 <div className="h-[100%] absolute left-[47%] bg-black top-0 border-e-2 border-color"></div>
@@ -144,7 +141,6 @@ const SalarySlipPrint: React.FC = () => {
                 </h2>
                 <h2 className="w-[22%] h-fit text-center px-2">{net}</h2>
                 <h2 className="w-[53%] h-fit text-center px-2 pe-1 text-[12px]">
-                  {/* ({numberToWords(Number(net.replaceAll(",", "")))} Rupees Only) */}
                 </h2>
               </div>
               <div className="w-full h-fit flex justify-start border-[0.5px] border-color py-1  bg-[rgb(102,203,255)]* bg-green-300 relative">
@@ -158,13 +154,6 @@ const SalarySlipPrint: React.FC = () => {
                   ({numberToWords(Number(net.replaceAll(",", "")))} Rupees Only)
                 </h2>
               </div>
-              {/* <div className="w-full h-fit flex justify-start border-[0.5px] border-color py-1  bg-[rgb(102,203,255)]* text-transparent">
-                <h2 className="w-[25%] h-fit text-center px-2">
-                  Total Net Salary
-                </h2>
-                <h2 className="w-[22%] h-fit text-center px-2">{net}</h2>
-                <h2 className="w-[53%] h-fit text-center px-2 pe-1 text-[12px]"></h2>
-              </div> */}
               <div className="w-full flex-co h-fit flex justify-start py-1 relative mt-5">
                 <h2 className="w-[25% h-fit text-start px-  text-[15px] font-[700]">
                   Note:

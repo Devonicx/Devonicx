@@ -489,12 +489,7 @@ const InternshipExtensionLetter: React.FC = () => {
               >
                 Save PDF
               </button>
-              {/* <button
-                className="text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]"
-                onClick={() => dispatch(setEmailShowR(true))}
-              >
-                Save for Email
-              </button> */}
+
             </div>
           </div>
           <RecentRecord

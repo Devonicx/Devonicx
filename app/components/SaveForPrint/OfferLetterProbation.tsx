@@ -35,7 +35,6 @@ const OfferLetterProbationPrint: React.FC = () => {
       )
     );
   }, [data.allowance, data.basicSalary]);
-// console.log(data);
 
   return (
     <div className="mx-auto w-fit h-fit flex flex-col justify-center items-center relative overflow-hidden showOnPrintOnly leading-[23px] text-justify shadow-2xl zooming">
@@ -231,12 +230,7 @@ const OfferLetterProbationPrint: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <p className="py-1"></p>
-                  <span className="flex gap-1">
-                    {data.comLine
-                      ? "Additionally, you will receive a 10% commission upon the successful completion of those project onboard by you."
-                      : null}
-                  </span> */}
+           
                   <p className="py-1"></p>
                   <b>
                     {" "}

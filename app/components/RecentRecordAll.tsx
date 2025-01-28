@@ -129,7 +129,6 @@ const RecentRecordAll: React.FC<propType> = ({ letterType }) => {
       getData();
     }
   }, [global.recentReloader, global.forms]);
-  // console.log(tableData?.filter((item: any) => item?.time.includes(global.username)));
 
   function search(e: any) {
     if (e !== "") {
@@ -226,7 +225,7 @@ const RecentRecordAll: React.FC<propType> = ({ letterType }) => {
   }, []);
 
   return (
-    <div className="w-[100%] h-fit hideOnPrint bg-red-20 flex justify-center items-center">
+    <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center">
       <div className="flex flex-col bg-[rgb(250,250,250)] justify-center items-center w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden gap-3 md:gap-10 pb-5 md:pb-10">
         <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
           <span>{global.admin ? "All Records" : "Recent Records"}</span>
@@ -324,9 +323,7 @@ const RecentRecordAll: React.FC<propType> = ({ letterType }) => {
                                   regenerateLoading === item.id ? true : false
                                 }
                               >
-                                {/* {regenerateLoading === item.id
-                                  ? "Regenerating..."
-                                  : "Regenerate"} */}
+                    
                                 Regenerate
                               </button>
 

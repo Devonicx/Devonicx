@@ -108,7 +108,7 @@ const RecentRecord: React.FC<propType> = ({
 
 
   return (
-    <div className="w-[100%] h-fit hideOnPrint bg-red-20 flex justify-center items-center">
+    <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center">
       <div className="flex flex-col bg-[rgb(250,250,250)] justify-center items-center w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden">
         <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
           <span>Recent Records</span>
@@ -233,7 +233,7 @@ const RecentRecord: React.FC<propType> = ({
           </div>
 
           {tableData ? (
-            <div className="w-full h-[50px] bg-red-40 flex flex-row-reverse justify-between items-center relative">
+            <div className="w-full h-[50px] flex flex-row-reverse justify-between items-center relative">
               <div className="ms-5 flex gap-2 items-center text-[10px] md:text-[16px]">
                 <button
                   className={`text-[16px] md:text-[25px]  ${

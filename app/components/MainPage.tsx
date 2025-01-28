@@ -39,18 +39,11 @@ console.log(global.forms);
   return (
     <>
       <div className="w-full h-fit bg-pink-30 border-1 border-color">
-        <div className="w-[95%] 2xl:w-[87%] h-fit mx-auto pt-6 md:pt-10 pb-3 md:pb-5 flex justify-end items-start bg-yellow-40">
-          {/* <div className="w-[95%] 2xl:w-[87%] absolute flex justify-start md:justify-center bg-green-70 z-[0]">
-            <h1 className="text-[16px] md:text-[25px] font-[600]">
-              Welcome {global.username}!
-            </h1>
-          </div> */}
-
-          {/* <div className="w-[300px] flex-wrap md:w-[100%] flex justify-end gap-2 md:gap-0 md:justify-between bg-red-80 z-[10]"> */}
-          <div
+        <div className="w-[95%] 2xl:w-[87%] h-fit mx-auto pt-6 md:pt-10 pb-3 md:pb-5 flex justify-end items-start ">
+        <div
             className={`flex-wrap w-[100%] flex justify-between md:justify-end gap-2 ${
               global.admin ? "md:justify-betwee" : ""
-            } bg-red-80 z-[10]`}
+            } z-[10]`}
           >
             {global.admin ? (
               <>

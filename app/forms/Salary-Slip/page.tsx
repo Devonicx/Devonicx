@@ -1,5 +1,4 @@
 "use client";
-"use client";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,8 +12,6 @@ import {
   setCurrentDateR,
   setResetDeduction,
   setPrintShowR,
-  // setAllowanceR,
-  // setResetAllowance,
 } from "@/app/store/SalarySlip";
 import { RootState } from "@/app/store";
 import axios from "axios";
@@ -25,17 +22,14 @@ import RecentRecord from "@/app/components/RecentRecord";
 import { FaAsterisk, FaChevronLeft, FaPlus, FaPrint, FaTimes } from "react-icons/fa";
 import { formatAmount, formatCNIC } from "@/app/functions/formats";
 import DeductionInputs from "@/app/components/DeductionInputs";
-// import AllowanceInputs from "@/app/components/AllowanceInputs";
 
 import {
   hasEmptyField,
-  hasEmptyFieldResDate,
   redBorder,
   redColor,
 } from "@/app/functions/formRequiredFields";
 import usePreventPrint from "@/app/functions/printPreventer";
 import SalarySlipPrint from "@/app/components/SaveForPrint/SalarySlip";
-// import AllowanceInputsSalarySlip from "@/app/components/AllowanceInputsSalarySlip";
 
 const SalarySlip: React.FC = () => {
   interface DeductionType {
@@ -54,7 +48,6 @@ const SalarySlip: React.FC = () => {
   let [month, setmonth] = useState(data.month);
   let [currentDate, setcurrentDate] = useState(data.currentDate);
   let [deduction, setdeduction] = useState<DeductionType[]>(data.deduction);
-  // let [allowance, setAllowance] = useState<DeductionType[]>(data.allowance);
 
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
@@ -140,7 +133,6 @@ const SalarySlip: React.FC = () => {
     setmonth(newData.month);
     setcurrentDate(newData.currentDate);
     setdeduction(newData.deduction);
-    // setAllowance(newData.allowance);
   }
   usePreventPrint(showPrint);
 

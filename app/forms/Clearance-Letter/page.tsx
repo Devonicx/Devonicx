@@ -572,9 +572,7 @@ console.log(data);
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center">
                 <label className="w-[30%]   text-[12px] md:text-[14px] xl:text-[18px]   font-[500] flex items-start justify-start gap-[5px]">
-                  {/* <FaAsterisk
-                    className={` text-[8px]  mt-[4px] w-fit text-transparent`}
-                  /> */}
+         
                   Payment Date
                 </label>
                 <input
@@ -645,9 +643,7 @@ console.log(data);
                 <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center">
                   <label className="w-fit flex flex-col justify-end items-end">
                     <span className="w-fit   text-[12px] md:text-[14px] xl:text-[18px]   font-[500] flex items-start justify-start gap-[5px]">
-                      {/* <FaAsterisk
-                        className={` text-[8px]  mt-[4px] w-fit  text-transparent`}
-                      /> */}
+              
                       Assets
                     </span>
                     <span className=" text-[9px] md:text-[10px] xl:text-[12px]  font-[400]">

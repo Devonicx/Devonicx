@@ -13,7 +13,6 @@ export function redBorder(
     return "border-color";
   }
 }
-// Function to validate email format
 function isValidEmail(email: string): boolean {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -43,15 +42,7 @@ export function redColor(
   fieldEmpty: boolean,
   printClicked: boolean
 ) {
-  // if (fieldEmpty && printClicked) {
-  //   if (field?.trim() === "") {
   return "text-red-500";
-  //   } else {
-  //     return "text-black";
-  //   }
-  // } else {
-  //   return "text-black";
-  // }
 }
 
 export function hasEmptyField(

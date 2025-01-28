@@ -591,5 +591,3 @@ const OfferLetterIntern: React.FC = () => {
 };
 
 export default OfferLetterIntern;
-
-          {/* <div className="transform scale-[40%] md:transform md:scale-[70%] lg:transform lg:scale-[100%] translate-y-[-15%] lg:translate-y-[0%] print:transform print:scale-[100%] print:translate-y-[0%] w-fit h-fit scrollNone" > */}

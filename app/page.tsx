@@ -29,12 +29,9 @@ const Home: React.FC = () => {
           dispatch(setAdminR(data.admin));
         } catch (err) {
           console.log("err", err);
-          // setLoading(false);
           setLoading(false);
         } finally {
-          // if (global.username) {
           setLoading(false);
-          // }
         }
       }
       postToken();
@@ -52,8 +49,6 @@ const Home: React.FC = () => {
     storeTokenToDb();
   }, [tokenVerifierTrigger]);
 
-  // console.log(global.admin, global.forms, global.username);
-  // console.log( global.forms);
 
   return (
     <>
