@@ -177,7 +177,7 @@ const SalarySlipPrint: React.FC = () => {
             </div>
             <div className="flex flex-col justify-betwenn items-start py-24 mt- w-full text-[16px] font-[400] ">
               <h2 className="w-[50%] h-fit text-start ">
-                Muhammad Rehan Arshad
+                Muhammad Saqib Sikandar
               </h2>
               <h2 className="w-[50%] h-fit text-start ">
                 Chief Executive Officer

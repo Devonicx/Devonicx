@@ -274,9 +274,9 @@ ${insertBreaks(
                   <span>between</span>
                 </p>
                 <div>
-                  <b>Devonicx</b>, with its principal place of business
-                  at 53, Hamza Heights, Quaid Block Commercial Bahria Town,
-                  Lahore, Pakistan, hereinafter referred to as "Client," and{" "}
+                  <b>Devonicx</b>, with its principal place of business at
+                  Office #19 2nd Floor Zainab Tower, Model Town, Lohore,
+                  Pakistan, hereinafter referred to as "Client," and{" "}
                   <b> {formatUperFirst(data.name)}</b>, having CNIC{" "}
                   {data.softwareHouse === "_"
                     ? data.refCnic

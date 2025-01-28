@@ -22,8 +22,7 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                   Page <b>1</b> of <b>3</b>
                 </span>
               </div>
-              <div className="flex flex-col justify-betwenn items-start py-3">
-              </div>
+              <div className="flex flex-col justify-betwenn items-start py-3"></div>
               <div className="w-full flex justify-center items-start">
                 <h1 className="text-[19px] font-[700] underline">
                   NON DISCLOSURE AGREEMENT
@@ -35,8 +34,8 @@ const NonDisclosureAgreementPrint: React.FC = () => {
                 <div className="text-[16px] font-[400] w-full leading-[23px]">
                   This Non-Disclosure Agreement (the “Agreement”) is made and
                   entered into by and between <b>Devonicx</b>, with its
-                  principal place of business at 53, Quaid Block Commercial,
-                  Bahria Town, Lahore (the “Company”), and {` `}
+                  principal place of business at Office #19 2nd Floor Zainab
+                  Tower, Model Town, Lohore (the “Company”), and {` `}
                   <b>
                     {data.name ? formatUperFirst(data.name) : "_______________"}{" "}
                   </b>

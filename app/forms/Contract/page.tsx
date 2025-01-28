@@ -129,7 +129,7 @@ Milestone 2   [30%]   Second Task`
   let [writtenBy, setwrittenBy] = useState(data.writtenBy);
   let [writtenByText, setwrittenByText] = useState(data.writtenByText);
   let [writtenByText1, setwrittenByText1] = useState(
-    `Mohammad Rehan Arshad
+    `Mohammad Saqib Sikandar
 Chief Executive Officer
 Devonicx`
   );

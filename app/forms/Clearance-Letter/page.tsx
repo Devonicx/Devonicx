@@ -283,7 +283,7 @@ console.log(data);
                   Employee ID
                 </label>
                 <input
-                  placeholder="Soft-00"
+                  placeholder="Devonicx-00"
                   type="text"
                   className={`w-[60%]   text-[12px] md:text-[14px] xl:text-[18px]   h-[45px] rounded-[10px] px-3 border-2  ${redBorder(
                     data.employeeId,

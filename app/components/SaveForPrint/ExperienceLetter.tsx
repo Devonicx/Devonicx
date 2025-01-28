@@ -61,7 +61,7 @@ const ExperienceLetterPrint: React.FC = () => {
                   Regards,
                   <p className="pt-24"></p>
                   <p className="pt-6"></p>
-                  <b>Rehan Arshad</b>
+                  <b>Saqib Sikandar</b>
                   <br />
                   Chief Executive Officer
                   <br />
