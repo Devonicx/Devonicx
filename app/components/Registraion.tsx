@@ -64,7 +64,7 @@ const Registration: React.FC<AllowanceInputProps> = ({
                 </h2>
                 <p className="text-center text-white text-[13px] md:text-[16px] sm:pb-2 w-[80%] mx-auto font-[400]">
                  
-                  Welcome to the HRM Data Handler! Effortlessly simplifying and
+                  Welcome to the Devonicx Data Handler! Effortlessly simplifying and
                   streamlining your human resources management.
                 </p>
               </div>
