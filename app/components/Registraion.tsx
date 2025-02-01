@@ -35,7 +35,7 @@ const Registration: React.FC<AllowanceInputProps> = ({
   }, []);
   return (
     <div
-      className="w-full custom-b h-[100vh overflow-hidden bg-red-500"
+      className="w-full custom-b h-[100vh overflow-hidden"
       style={{ height: "calc(100vh - 88px)" }}
     >
       <div className="flex justify-center items-center w-full bg-blue-30 h-full overflow-hidden relative">
