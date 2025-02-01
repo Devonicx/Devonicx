@@ -11,18 +11,16 @@ import {
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { setLastRefNoR } from "../store/ExperienceLetter";
-import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
 
 const AttendanceRecord = () => {
   let [data, setData] = useState<any>();
   let [tableData, setTableData] = useState<any>();
-  let [searchText, setSearchText] = useState<any>();
+  let [searchByNameText, setSearchByNameText] = useState<any>();
+  let [searchByDateText, setSearchByDateText] = useState<any>();
   let [recentLoading, setRecentLoading] = useState<boolean>(true);
   let global = useSelector((state: RootState) => state.Global);
   let [multiplier, setMultiplier] = useState(0);
   let [userData, setUserData] = useState();
-  let [inFormId, setInFormId] = useState<number>();
   let [limit, setLimit] = useState<number>(10);
   let dispatch = useDispatch();
 
@@ -30,12 +28,9 @@ const AttendanceRecord = () => {
     async function getData() {
       try {
         setRecentLoading(true);
-        let response = await axios.get(`/api/recentRecord/Attendance`);
+        let response = await axios.get(`/api/attendanceRecord`);
         if (response) {
           var parseData = response.data.result;
-          parseData?.forEach((element: any) => {
-            element.data = JSON.parse(element.data);
-          });
           parseData.reverse();
           if (!global.admin) {
             setData(
@@ -57,18 +52,17 @@ const AttendanceRecord = () => {
         console.log(err);
       } finally {
         setRecentLoading(false);
-        setSearchText("");
+        setSearchByNameText("");
       }
     }
     getData();
   }, [global.recentReloader]);
 
-  function search(e: any) {
+  function searchByName(e: any) {
     if (e !== "") {
       let tempData = data.filter(
         (item: any) =>
-          item.data?.name?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.currentDate?.includes(e)
+          item?.name?.toLowerCase().includes(e.toLowerCase())
       );
       setTableData(tempData);
       setMultiplier(0);
@@ -76,6 +70,20 @@ const AttendanceRecord = () => {
       setTableData(data);
     }
   }
+
+  function searchByDate(e: any) {
+    if (e !== "") {
+      let tempData = data.filter(
+        (item: any) =>
+          item?.date?.toLowerCase().includes(e.toLowerCase())
+      );
+      setTableData(tempData);
+      setMultiplier(0);
+    } else {
+      setTableData(data);
+    }
+  }
+
   useEffect(() => {
     async function getUserData() {
       try {
@@ -89,13 +97,6 @@ const AttendanceRecord = () => {
     getUserData();
   }, []);
 
-  useEffect(() => {
-    if (tableData) {
-      dispatch(setLastRefNoR(tableData[0]?.data.refNo));
-      dispatch(setLastEmployeeIdR(tableData[0]?.data.employeeId));
-    }
-  }, [tableData]);
-
   console.log(tableData);
 
   return (
@@ -107,15 +108,30 @@ const AttendanceRecord = () => {
         <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-pink-90">
           <div className="w-[100%] md:w-[50%] h-[45px] rounded-[10px] px-5 bg-blue-30 relative flex justify-end items-center">
             <input
-              placeholder="Search by name and date"
-              className="w-full h-full rounded-[10px] px-5 border-2 focus:outline-none border-color absolute left-0 z-0 text-[12px] md:text-[16px] hover:border-black"
+              placeholder="Search by name"
+              className="w-full h-full rounded-l-[10px] px-5 border-r border-2 focus:outline-none border-color absolute left-0 z-0 text-[12px] md:text-[16px] hover:border-black"
               onChange={(e) => {
-                search(e.target.value.trim()), setSearchText(e.target.value);
+                searchByName(e.target.value.trim()),
+                  setSearchByNameText(e.target.value);
               }}
-              value={searchText}
+              value={searchByNameText}
             />
             <div className="z-[50]">
-              <FaSearch className="w-[20px] h-[20px]" />
+              {/* <FaSearch className="w-[20px] h-[20px]" /> */}
+            </div>
+          </div>
+          <div className="w-[100%] md:w-[50%] h-[45px] rounded-[10px] px-5 bg-blue-30 relative flex justify-end items-center">
+            <input
+              placeholder="Search by date"
+              className="w-full h-full rounded-r-[10px] px-5 border-l border-2 focus:outline-none border-color absolute left-0 z-0 text-[12px] md:text-[16px] hover:border-black"
+              onChange={(e) => {
+                searchByDate(e.target.value.trim()),
+                  setSearchByDateText(e.target.value);
+              }}
+              value={searchByDateText}
+            />
+            <div className="z-[50]">
+              {/* <FaSearch className="w-[20px] h-[20px]" /> */}
             </div>
           </div>
         </div>
@@ -160,16 +176,16 @@ const AttendanceRecord = () => {
                             {key + 1}
                           </td>
                           <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[30%]">
-                            {item.data.name}
+                            {item.name}
                           </td>
                           <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[20%]">
-                            {item.data.checkInTime}
+                            {item.checkInTime}
                           </td>
                           <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[20%]">
-                            {item.data.checkOutTime}
+                            {item.checkOutTime}
                           </td>
                           <td className="last-th-border text-center  text-[12px] md:text-[16px] px-0 h-full w-[20%]">
-                            {item.data.date?.split("-")[0]} {item.data.month}
+                            {item.date}
                           </td>
                         </tr>
                       </>
