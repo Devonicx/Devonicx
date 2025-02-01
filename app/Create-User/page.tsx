@@ -74,11 +74,14 @@ export default function CreateUser() {
     let hasEmpty = false;
 
     for (const key in obj) {
-      if (key === "formsArray" && obj[key].length === 0) {
-        hasEmpty = true;
-        alert("Select at least one form");
-        break;
-      } else if (typeof obj[key] === "string" && obj[key]?.trim() === "") {
+      // if (key === "formsArray" && obj[key].length === 0) {
+      //   hasEmpty = true;
+      //   alert("Select at least one form");
+      //   break;
+      // } else
+      console.log(obj);
+      
+      if (typeof obj[key] === "string" && obj[key]?.trim() === "") {
         hasEmpty = true;
         alert("Some required fields are empty");
         break;
@@ -474,7 +477,7 @@ export default function CreateUser() {
                   />
                   Admin Password:
                 </label>
-  
+
                 <div
                   className={`flex justify-end items-center bg-white relative w-[60%] text-[12px] md:text-[14px] xl:text-[18px]  h-[45px] rounded-[10px] overflow-hidden border-2 ${redBorder(
                     adminpassword,
@@ -513,10 +516,8 @@ export default function CreateUser() {
                   hasEmptyField({
                     username,
                     password,
-                    formsArray,
                     adminpassword,
                   });
-
                 }}
                 disabled={buttonDisable}
               >
@@ -524,7 +525,6 @@ export default function CreateUser() {
               </button>
             </div>
           </div>
-
         </div>
       )}
     </>

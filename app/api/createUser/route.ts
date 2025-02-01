@@ -13,9 +13,6 @@ export async function POST(req: Request) {
     day = day < 10 ? "0" + day : day;
     month = month < 10 ? "0" + month : month;
 
-    let formattedDate = `${day}-${month}-${year}`;
-    let arrayWithTime = formsArray.push(`time:- ${formattedDate}`);
-    console.log(arrayWithTime);
 
     let parentAdminData = await prisma.registration.findMany({
       where: {
