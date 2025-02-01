@@ -67,7 +67,6 @@ const Attendance: React.FC = () => {
     try {
       setCheckOutLoading(true);
       await axios.post("/api/checkOut", {
-        name: global.username,
         id: todayAttendanceData.id,
       });
     } catch (err) {
@@ -78,7 +77,6 @@ const Attendance: React.FC = () => {
     }
   }
 
-console.log(todayAttendanceData);
   useEffect(() => {
     async function todayAttendance() {
       try {

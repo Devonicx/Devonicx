@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   }).format(now);
 
   try {
-    let { name, id } = await req.json();
+    let { id } = await req.json();
     console.log(id);
 
     await prisma.attendanceRecords.updateMany({
