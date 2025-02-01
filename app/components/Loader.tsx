@@ -5,3 +5,10 @@ export default function Loader() {
     </div>
   );
 }
+export function FitLoader() {
+  return (
+    <div className="w-fit m-auto h-full">
+      <div className="custom-loader"></div>
+    </div>
+  );
+}

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import Loader from "@/app/components/Loader";
+import Loader, { FitLoader } from "@/app/components/Loader";
 import {
   setAdminR,
   setFormsR,
@@ -23,6 +23,7 @@ const Attendance: React.FC = () => {
   let [loading, setLoading] = useState<any>(true);
   let [checkInLoading, setCheckInLoading] = useState<boolean>(false);
   let [checkOutLoading, setCheckOutLoading] = useState<boolean>(false);
+  let [mainLoading, setMainLoading] = useState<boolean>(true);
   let [checkInDone, setCheckInDone] = useState<boolean>(false);
   let [todayAttendanceData, setTodayAttendanceData] = useState<any>();
   let [reloader, setReloader] = useState<number>(0);
@@ -67,6 +68,7 @@ const Attendance: React.FC = () => {
       setCheckOutLoading(true);
       await axios.post("/api/checkOut", {
         name: global.username,
+        id: todayAttendanceData.id,
       });
     } catch (err) {
       console.log(err);
@@ -76,10 +78,11 @@ const Attendance: React.FC = () => {
     }
   }
 
+console.log(todayAttendanceData);
   useEffect(() => {
     async function todayAttendance() {
       try {
-        setCheckInLoading(true);
+        setMainLoading(true);
         const result = await axios.post("/api/todayAttendance", {
           name: global.username,
         });
@@ -88,7 +91,7 @@ const Attendance: React.FC = () => {
       } catch (err) {
         console.log(err);
       } finally {
-        setCheckInLoading(false);
+        setMainLoading(false);
       }
     }
     if (global.username) todayAttendance();
@@ -113,26 +116,44 @@ const Attendance: React.FC = () => {
               Attendance - {date}
             </h2>
             <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 ">
-              <div className="w-full h-fit md:h-[80px] flex justify-between items-start px-5 md:px-0 pb-7 md:pb-0 gap-[25px">
-                <button
-                  className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] ${
-                    !checkInDone ? "bg-[#28a745]" : "bg-gray-600"
-                  } text-white rounded- hover:opacity-[0.8]`}
-                  onClick={checkIn}
-                  disabled={checkInDone || checkInLoading}
-                >
-                  {checkInLoading ? "Checking In..." : "Check In"}
-                </button>
-                <button
-                  className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] ${
-                    checkInDone ? "bg-[#dc3545]" : "bg-gray-600"
-                  } text-white rounded- hover:opacity-[0.8]`}
-                  onClick={checkOut}
-                  disabled={!checkInDone || checkOutLoading}
-                >
-                  {checkOutLoading ? "Checking Out..." : "Check Out"}
-                </button>
-              </div>
+              {mainLoading ? (
+                <div className="w-fit m-auto h-fit">
+                  <FitLoader />
+                </div>
+              ) : (
+                <div className="w-full h-fit md:h-[80px] flex flex-wrap justify-between items-start px-5 md:px-0 pb-7 md:pb-0 gap-1 md:gap-[0px]">
+                  <button
+                    className={`text-center w-full md:w-[50%] h-[60px] md:h-full text-sm md:text-lg xl:text-xl  font-[600] ${
+                      !checkInDone
+                        ? "bg-[#28a745] hover:opacity-[0.8]"
+                        : "bg-gray-600"
+                    } text-white rounded-`}
+                    onClick={checkIn}
+                    disabled={checkInDone || checkInLoading}
+                  >
+                    {checkInLoading
+                      ? "Checking In..."
+                      : checkInDone
+                      ? "Checked In"
+                      : "Check In"}
+                  </button>
+                  <button
+                    className={`text-center w-full md:w-[50%] h-[60px] md:h-full text-sm md:text-lg xl:text-xl  font-[600] ${
+                      checkInDone
+                        ? "bg-[#dc3545] hover:opacity-[0.8]"
+                        : "bg-gray-600"
+                    } text-white rounded-`}
+                    onClick={checkOut}
+                    disabled={!checkInDone || checkOutLoading}
+                  >
+                    {checkOutLoading
+                      ? "Checking Out..."
+                      : !checkInDone
+                      ? "Checked Out"
+                      : "Check Out"}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

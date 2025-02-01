@@ -2,32 +2,22 @@ import prisma from "@/app/server/prisma";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-let now = new Date();
-let currentTime = new Intl.DateTimeFormat("en-US", {
-  hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit",
-  hour12: true,
-  timeZone: "Asia/Karachi",
-}).format(now);
-
-console.log(currentTime);
-
-  const currentDate = new Date().toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-  console.log(currentDate);
+  let now = new Date();
+  let currentTime = new Intl.DateTimeFormat("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Karachi",
+  }).format(now);
 
   try {
-    let { name } = await req.json();
-    console.log(name, currentDate, currentTime);
+    let { name, id } = await req.json();
+    console.log(id);
 
     await prisma.attendanceRecords.updateMany({
       where: {
-        name: name,
-        checkOutTime: "",
+        id,
       },
       data: {
         checkOutTime: currentTime,
