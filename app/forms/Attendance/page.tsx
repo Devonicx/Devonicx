@@ -61,6 +61,18 @@ const Attendance: React.FC = () => {
       setSaveLoading(false);
     }
   }
+  async function checkOut() {
+    try {
+      setSaveLoading(true);
+      await axios.post("/api/checkOut", {
+        name: global.username,
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSaveLoading(false);
+    }
+  }
 
   console.log(data);
 
@@ -89,6 +101,7 @@ const Attendance: React.FC = () => {
                 </button>
                 <button
                   className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] bg-[#dc3545] text-white rounded- hover:opacity-[0.8]`}
+                  onClick={checkOut}
                 >
                   Check Out
                 </button>
