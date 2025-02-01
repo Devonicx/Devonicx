@@ -22,6 +22,9 @@ const Attendance: React.FC = () => {
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
   let [saveLoading, setSaveLoading] = useState<boolean>(false);
+  let [checkInDone, setCheckInDone] = useState<boolean>(false);
+  let [todayAttendanceData, setTodayAttendanceData] = useState<any>();
+  let [reloader, setReloader] = useState<number>(0);
   let router = useRouter();
 
   useEffect(() => {
@@ -34,11 +37,7 @@ const Attendance: React.FC = () => {
         dispatch(setUserNameR(data.username));
         dispatch(setAdminR(data.admin));
         dispatch(setnameR(data.username));
-        if (!data.forms.includes("Attendance")) {
-          router.push("/");
-        } else {
           setIsVerified(true);
-        }
       } catch (err) {
         router.push("/");
         setIsVerified(false);
@@ -50,18 +49,22 @@ const Attendance: React.FC = () => {
   }, []);
 
   async function checkIn() {
-    try {
-      setSaveLoading(true);
-      await axios.post("/api/checkIn", {
-        name: global.username,
-      });
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setSaveLoading(false);
-    }
+        console.log("checkin");
+        try {
+          setSaveLoading(true);
+          await axios.post("/api/checkIn", {
+            name: global.username,
+          });
+        } catch (err) {
+          console.log(err);
+        } finally {
+          setSaveLoading(false);
+          setReloader(reloader + 1);
+        }
   }
   async function checkOut() {
+        console.log("checkOut");
+
     try {
       setSaveLoading(true);
       await axios.post("/api/checkOut", {
@@ -71,10 +74,31 @@ const Attendance: React.FC = () => {
       console.log(err);
     } finally {
       setSaveLoading(false);
+      setReloader(reloader+1);
+
     }
   }
 
-  console.log(data);
+  useEffect(() => {
+    async function todayAttendance() {
+      try {
+        setSaveLoading(true);
+        const result = await axios.post("/api/todayAttendance", {
+          name: global.username,
+        });
+        setCheckInDone(result.data.checkInDone);
+        setTodayAttendanceData(result.data.data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setSaveLoading(false);
+      }
+    }
+    if (global.username) todayAttendance();
+  }, [global.username, reloader]);
+
+  console.log(checkInDone,
+todayAttendanceData);
 
   const date = new Date().toLocaleDateString();
   return (
@@ -94,14 +118,20 @@ const Attendance: React.FC = () => {
             <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 ">
               <div className="w-full h-fit md:h-[80px] flex justify-between items-start px-5 md:px-0 pb-7 md:pb-0 gap-[25px">
                 <button
-                  className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] bg-[#28a745] text-white rounded- hover:opacity-[0.8]`}
+                  className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] ${
+                    !checkInDone ? "bg-[#28a745]" : "bg-gray-600"
+                  } text-white rounded- hover:opacity-[0.8]`}
                   onClick={checkIn}
+                  disabled={checkInDone}
                 >
                   Check In
                 </button>
                 <button
-                  className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] bg-[#dc3545] text-white rounded- hover:opacity-[0.8]`}
+                  className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] ${
+                    checkInDone ? "bg-[#dc3545]" : "bg-gray-600"
+                  } text-white rounded- hover:opacity-[0.8]`}
                   onClick={checkOut}
+                  disabled={!checkInDone}
                 >
                   Check Out
                 </button>

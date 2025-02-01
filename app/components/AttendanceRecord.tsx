@@ -6,6 +6,7 @@ import {
   FaAngleDoubleRight,
   FaAngleLeft,
   FaAngleRight,
+  FaRedoAlt,
   FaSearch,
 } from "react-icons/fa";
 import Loader from "./Loader";
@@ -22,6 +23,7 @@ const AttendanceRecord = () => {
   let [multiplier, setMultiplier] = useState(0);
   let [userData, setUserData] = useState();
   let [limit, setLimit] = useState<number>(10);
+  let [reloader, setReloader] = useState<number>(0);
   let dispatch = useDispatch();
 
   useEffect(() => {
@@ -56,13 +58,12 @@ const AttendanceRecord = () => {
       }
     }
     getData();
-  }, [global.recentReloader]);
+  }, [global.recentReloader, reloader]);
 
   function searchByName(e: any) {
     if (e !== "") {
-      let tempData = data.filter(
-        (item: any) =>
-          item?.name?.toLowerCase().includes(e.toLowerCase())
+      let tempData = data.filter((item: any) =>
+        item?.name?.toLowerCase().includes(e.toLowerCase())
       );
       setTableData(tempData);
       setMultiplier(0);
@@ -73,9 +74,8 @@ const AttendanceRecord = () => {
 
   function searchByDate(e: any) {
     if (e !== "") {
-      let tempData = data.filter(
-        (item: any) =>
-          item?.date?.toLowerCase().includes(e.toLowerCase())
+      let tempData = data.filter((item: any) =>
+        item?.date?.toLowerCase().includes(e.toLowerCase())
       );
       setTableData(tempData);
       setMultiplier(0);
@@ -97,14 +97,21 @@ const AttendanceRecord = () => {
     getUserData();
   }, []);
 
-  console.log(tableData);
-
   return (
     <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center mt-[50px]">
       <div className="flex flex-col bg-[rgb(250,250,250)] justify-center items-center w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden">
-        <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
+        <div className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
           <span>Attendance Records</span>
-        </h2>
+          <button
+            className="text-lg flex justify-start gap-2 bg-gray-200 rounded-lg px-4 py-1 items-center leading-0"
+            onClick={() => {
+              setReloader(reloader + 1);
+            }}
+          >
+            <FaRedoAlt className="w-[15px] h-[15px]" />
+            Refresh
+          </button>
+        </div>
         <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-pink-90">
           <div className="w-[100%] md:w-[50%] h-[45px] rounded-[10px] px-5 bg-blue-30 relative flex justify-end items-center">
             <input
