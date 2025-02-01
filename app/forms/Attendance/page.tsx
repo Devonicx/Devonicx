@@ -12,6 +12,8 @@ import {
   setRecentReloaderR,
   setUserNameR,
 } from "@/app/store/Global";
+import AttendanceRecord from "@/app/components/AttendanceRecord";
+import { setnameR } from "@/app/store/Attendance";
 
 const Attendance: React.FC = () => {
   let dispatch = useDispatch();
@@ -31,6 +33,7 @@ const Attendance: React.FC = () => {
         dispatch(setFormsR(data.forms));
         dispatch(setUserNameR(data.username));
         dispatch(setAdminR(data.admin));
+        dispatch(setnameR(data.username));
         if (!data.forms.includes("Attendance")) {
           router.push("/");
         } else {
@@ -46,34 +49,30 @@ const Attendance: React.FC = () => {
     verifyTokenApi();
   }, []);
 
-  if (typeof window !== "undefined") {
-    window.onafterprint = (event) => {
-      async function saveRecord() {
-        try {
-          setSaveloading(true);
-          let { newDataChecker, emailShow, ...dataToSend } = data;
-          await axios.post("/api/saveRecord", {
-            type: "Attendance",
-            dataToSend,
-            createdBy: global.username,
-          });
-        } catch (err) {
-          console.log(err);
-        } finally {
-          setSaveloading(false);
-          dispatch(setRecentReloaderR(global.recentReloader + 1));
-        }
-      }
-      saveRecord();
-    };
+  async function saveRecord() {
+    try {
+      setSaveloading(true);
+      let { newDataChecker, emailShow, ...dataToSend } = data;
+      await axios.post("/api/saveRecord", {
+        type: "Attendance",
+        dataToSend,
+        createdBy: global.username,
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSaveloading(false);
+      dispatch(setRecentReloaderR(global.recentReloader + 1));
+    }
   }
+
   function checkIn() {
     console.log("checkIn");
   }
   function checkOut() {
     console.log("checkOut");
   }
-console.log(global.admin);
+console.log(data);
 
   const date = new Date().toLocaleDateString();
   return (
@@ -83,7 +82,7 @@ console.log(global.admin);
           <Loader />
         </div>
       ) : global.admin ? (
-        <div>Admin</div>
+        <AttendanceRecord />
       ) : (
         <div className="w-full h-fit flex flex-col justify-between items-start gap-[40px] py-[50px] hideOnPrint relative">
           <div className="flex flex-col bg-[rgb(250,250,250)] justify-between items-start w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden ">
@@ -94,7 +93,7 @@ console.log(global.admin);
               <div className="w-full h-fit md:h-[80px] flex justify-between items-start px-5 md:px-0 pb-7 md:pb-0 gap-[25px">
                 <button
                   className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] bg-[#28a745] text-white rounded- hover:opacity-[0.8]`}
-                  onClick={checkIn}
+                  onClick={saveRecord}
                 >
                   Check In
                 </button>

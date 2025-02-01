@@ -14,17 +14,8 @@ import { RootState } from "../store";
 import Deleter from "./Deleter";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
-interface propType {
-  letterType: String;
-  regenerate: any;
-  setShowPrint: any;
-}
 
-const RecentRecord: React.FC<propType> = ({
-  letterType,
-  regenerate,
-  setShowPrint,
-}) => {
+const AttendanceRecord = () => {
   let [data, setData] = useState<any>();
   let [tableData, setTableData] = useState<any>();
   let [searchText, setSearchText] = useState<any>();
@@ -40,7 +31,7 @@ const RecentRecord: React.FC<propType> = ({
     async function getData() {
       try {
         setRecentLoading(true);
-        let response = await axios.get(`/api/recentRecord/${letterType}`);
+        let response = await axios.get(`/api/recentRecord/Attendance`);
         if (response) {
           var parseData = response.data.result;
           parseData?.forEach((element: any) => {
@@ -106,12 +97,13 @@ const RecentRecord: React.FC<propType> = ({
     }
   }, [tableData]);
 
+  console.log(tableData);
+
   return (
-    <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center">
+    <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center mt-[50px]">
       <div className="flex flex-col bg-[rgb(250,250,250)] justify-center items-center w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden">
         <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
-          <span>Recent Records</span>
-          <span>Total: {tableData?.length}</span>
+          <span>Attendance Records</span>
         </h2>
         <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-pink-90">
           <div className="w-[100%] md:w-[50%] h-[45px] rounded-[10px] px-5 bg-blue-30 relative flex justify-end items-center">
@@ -137,18 +129,16 @@ const RecentRecord: React.FC<propType> = ({
                     No.
                   </th>
                   <th className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[30%]">
-                    Name
+                    Employee Name
                   </th>
                   <th className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[20%]">
-                    Issue Date
+                    Check In Time
                   </th>
-                  {global.admin ? (
-                    <th className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[15%]">
-                      Created By
-                    </th>
-                  ) : null}
-                  <th className="last-th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[30%]">
-                    Action
+                  <th className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[20%]">
+                    Check Out Time
+                  </th>
+                  <th className="last-th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[20%]">
+                    Date
                   </th>
                 </tr>
               </thead>
@@ -174,47 +164,13 @@ const RecentRecord: React.FC<propType> = ({
                             {item.data.name}
                           </td>
                           <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[20%]">
-                            {item.data.currentDate} {item?.time.split("by:")[0]}
+                            {item.data.checkInTime}
                           </td>
-                          {global.admin ? (
-                            <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[15%]">
-                              {item?.time.split("by:")[1]}
-                            </td>
-                          ) : null}
-                          <td className="text-center  text-[12px] md:text-[16px] px-0 h-full w-[30%]">
-                            <div className="flex justify-evenly items-center h-full">
-                              {userData ? <Deleter id={item.id} /> : null}
-                              <button
-                                className={`${
-                                  inFormId === item.id
-                                    ? "regenerate-effect"
-                                    : ""
-                                } text-main-blue underline hover:no-underline border-e-2 border-color h-full w-full px-5 `}
-                                onClick={() => {
-                                  regenerate(item.data);
-                                  setInFormId(item.id);
-                                  window.scrollTo({
-                                    top: 0,
-                                    behavior: "smooth",
-                                  });
-                                }}
-                              >
-                                Regenerate
-                              </button>
-                              <button
-                                className={`text-main-blue underline hover:no-underline h-full w-full px-`}
-                                onClick={() => {
-                                  regenerate(item.data);
-                                  window.scrollTo({
-                                    top: 0,
-                                    behavior: "smooth",
-                                  });
-                                  setShowPrint(true);
-                                }}
-                              >
-                                Make PDF
-                              </button>
-                            </div>
+                          <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[20%]">
+                            {item.data.checkOutTime}
+                          </td>
+                          <td className="last-th-border text-center  text-[12px] md:text-[16px] px-0 h-full w-[20%]">
+                            {item.data.date?.split("-")[0]} {item.data.month}
                           </td>
                         </tr>
                       </>
@@ -344,4 +300,4 @@ const RecentRecord: React.FC<propType> = ({
   );
 };
 
-export default RecentRecord;
+export default AttendanceRecord;
