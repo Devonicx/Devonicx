@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/submit/route.js", "app/page.tsx", "app/db/drizzle.ts", "app/layout.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/submit/route.js", "app/page.tsx", "app/db/drizzle.ts", "app/layout.tsx", "app/Debouncing.jsx"],
   "exclude": ["node_modules"]
 }

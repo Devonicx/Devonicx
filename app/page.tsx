@@ -28,7 +28,6 @@ const Home: React.FC = () => {
           dispatch(setUserNameR(data.username));
           dispatch(setAdminR(data.admin));
         } catch (err) {
-          console.log("err", err);
           setLoading(false);
         } finally {
           setLoading(false);
@@ -47,8 +46,10 @@ const Home: React.FC = () => {
       verifyTokenApi();
     };
     storeTokenToDb();
-  }, [tokenVerifierTrigger]);
 
+
+    
+  }, [tokenVerifierTrigger]);
 
   return (
     <>
@@ -57,7 +58,7 @@ const Home: React.FC = () => {
           <Loader />
         </div>
       ) : isVerified ? (
-          <MainPage />
+        <MainPage />
       ) : (
         <Registration
           tokenVerifierTrigger={tokenVerifierTrigger}

@@ -29,14 +29,13 @@ const Registration: React.FC<AllowanceInputProps> = ({
   let global = useSelector((state: RootState) => state.Global);
   async function getData() {
     let result = await axios.post(`/api/registraion`);
-    console.log(result);
   }
   useEffect(() => {
     getData();
   }, []);
   return (
     <div
-      className="w-full custom-b h-[100vh overflow-hidden"
+      className="w-full custom-b h-[100vh overflow-hidden bg-red-500"
       style={{ height: "calc(100vh - 88px)" }}
     >
       <div className="flex justify-center items-center w-full bg-blue-30 h-full overflow-hidden relative">
