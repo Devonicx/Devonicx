@@ -30,7 +30,7 @@ const AttendanceRecord = () => {
     async function getData() {
       try {
         setRecentLoading(true);
-        let response = await axios.get(`/api/attendanceRecord`);
+        let response = await axios.post(`/api/attendanceRecord`);
         if (response) {
           var parseData = response.data.result;
           parseData.reverse();

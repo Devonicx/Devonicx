@@ -97,6 +97,7 @@ const Attendance: React.FC = () => {
 
   // console.log("checkInLoading", checkInDone || checkInLoading);
   // console.log("checkOutLoading", !checkInDone || checkOutLoading);
+console.log(todayAttendanceData);
 
   const date = new Date().toLocaleDateString();
   return (

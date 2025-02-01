@@ -14,7 +14,6 @@ export async function POST(req: Request) {
   try {
     let { id } = await req.json();
     console.log(id);
-
     await prisma.attendanceRecords.updateMany({
       where: {
         id,
@@ -26,7 +25,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ result: "saved data" });
   } catch (err) {
     console.log(err);
-
     return NextResponse.json({ result: "error in data saving: ", err });
   }
 }
