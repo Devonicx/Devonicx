@@ -65,7 +65,31 @@ function MainPage() {
           </div>
         </div>
       </div>
+
       <div className="w-[95%] 2xl:w-[87%] h-fit mx-auto pb-7 md:pb-14 pt-3 md:pt-3">
+        <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5">
+          <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
+            Attendance System
+          </h2>
+          <div className="w-[full] h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto">
+            <Link
+              href={"/forms/Attendance"}
+              className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
+            >
+              <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
+                <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
+                  <img src={pic12.src} className="w-[60%] h-[60%]" />
+                </div>
+              </div>
+              <div className="w-[90%] h-[30%]">
+                <h3 className="text-[14px] md:text-[18px] text-center font-[500]">
+                  Employees Attendance{" "}
+                </h3>
+              </div>
+            </Link>
+          </div>
+        </div>
+
         {global.forms?.includes("Offer-Letter-Intern") ||
         global.forms?.includes("Offer-Letter-Probation") ||
         global.forms?.includes("Appointment-Letter") ||
@@ -356,32 +380,6 @@ function MainPage() {
                   <div className="w-[90%] h-[30%]">
                     <h3 className="text-[14px] md:text-[18px] text-center font-[500]">
                       Project Outsource Contract
-                    </h3>
-                  </div>
-                </Link>
-              ) : null}
-            </div>
-          </div>
-        ) : null}
-        {!global.forms?.includes("Attendance") ? (
-          <div className="w-[full] h-fit py-4 md:py-8 flex flex-col gap-2 md:gap-5">
-            <h2 className="text-[16px] md:text-[25px] font-[600] text-[#27416b]">
-              Attendance System
-            </h2>
-            <div className="w-[full] h-fit linkDiv bg-neutral-50 px-3 md:px-10 xl:px-14 py-4 md:py-8 rounded-[10px] border-2 border-color flex justify-start items-center gap-2 md:gap-5 xl:gap-10 overflow-auto">
-              {!global.forms?.includes("Attendance") ? (
-                <Link
-                  href={"/forms/Attendance"}
-                  className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
-                >
-                  <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
-                    <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
-                      <img src={pic12.src} className="w-[60%] h-[60%]" />
-                    </div>
-                  </div>
-                  <div className="w-[90%] h-[30%]">
-                    <h3 className="text-[14px] md:text-[18px] text-center font-[500]">
-                      Employees Attendance{" "}
                     </h3>
                   </div>
                 </Link>
