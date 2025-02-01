@@ -21,7 +21,8 @@ const Attendance: React.FC = () => {
   let global = useSelector((state: RootState) => state.Global);
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
-  let [saveLoading, setSaveLoading] = useState<boolean>(false);
+  let [checkInLoading, setCheckInLoading] = useState<boolean>(false);
+  let [checkOutLoading, setCheckOutLoading] = useState<boolean>(false);
   let [checkInDone, setCheckInDone] = useState<boolean>(false);
   let [todayAttendanceData, setTodayAttendanceData] = useState<any>();
   let [reloader, setReloader] = useState<number>(0);
@@ -37,7 +38,7 @@ const Attendance: React.FC = () => {
         dispatch(setUserNameR(data.username));
         dispatch(setAdminR(data.admin));
         dispatch(setnameR(data.username));
-          setIsVerified(true);
+        setIsVerified(true);
       } catch (err) {
         router.push("/");
         setIsVerified(false);
@@ -49,40 +50,36 @@ const Attendance: React.FC = () => {
   }, []);
 
   async function checkIn() {
-        console.log("checkin");
-        try {
-          setSaveLoading(true);
-          await axios.post("/api/checkIn", {
-            name: global.username,
-          });
-        } catch (err) {
-          console.log(err);
-        } finally {
-          setSaveLoading(false);
-          setReloader(reloader + 1);
-        }
+    try {
+      setCheckInLoading(true);
+      await axios.post("/api/checkIn", {
+        name: global.username,
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setCheckInLoading(false);
+      setReloader(reloader + 1);
+    }
   }
   async function checkOut() {
-        console.log("checkOut");
-
     try {
-      setSaveLoading(true);
+      setCheckOutLoading(true);
       await axios.post("/api/checkOut", {
         name: global.username,
       });
     } catch (err) {
       console.log(err);
     } finally {
-      setSaveLoading(false);
-      setReloader(reloader+1);
-
+      setCheckOutLoading(false);
+      setReloader(reloader + 1);
     }
   }
 
   useEffect(() => {
     async function todayAttendance() {
       try {
-        setSaveLoading(true);
+        setCheckInLoading(true);
         const result = await axios.post("/api/todayAttendance", {
           name: global.username,
         });
@@ -91,14 +88,14 @@ const Attendance: React.FC = () => {
       } catch (err) {
         console.log(err);
       } finally {
-        setSaveLoading(false);
+        setCheckInLoading(false);
       }
     }
     if (global.username) todayAttendance();
   }, [global.username, reloader]);
 
-  console.log(checkInDone,
-todayAttendanceData);
+  // console.log("checkInLoading", checkInDone || checkInLoading);
+  // console.log("checkOutLoading", !checkInDone || checkOutLoading);
 
   const date = new Date().toLocaleDateString();
   return (
@@ -122,18 +119,18 @@ todayAttendanceData);
                     !checkInDone ? "bg-[#28a745]" : "bg-gray-600"
                   } text-white rounded- hover:opacity-[0.8]`}
                   onClick={checkIn}
-                  disabled={checkInDone}
+                  disabled={checkInDone || checkInLoading}
                 >
-                  Check In
+                  {checkInLoading ? "Checking In..." : "Check In"}
                 </button>
                 <button
                   className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] ${
                     checkInDone ? "bg-[#dc3545]" : "bg-gray-600"
                   } text-white rounded- hover:opacity-[0.8]`}
                   onClick={checkOut}
-                  disabled={!checkInDone}
+                  disabled={!checkInDone || checkOutLoading}
                 >
-                  Check Out
+                  {checkOutLoading ? "Checking Out..." : "Check Out"}
                 </button>
               </div>
             </div>
