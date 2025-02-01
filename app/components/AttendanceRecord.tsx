@@ -11,7 +11,6 @@ import {
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import Deleter from "./Deleter";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
 

@@ -21,7 +21,7 @@ const Attendance: React.FC = () => {
   let global = useSelector((state: RootState) => state.Global);
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
-  let [saveloading, setSaveloading] = useState<boolean>(false);
+  let [saveLoading, setSaveLoading] = useState<boolean>(false);
   let router = useRouter();
 
   useEffect(() => {
@@ -49,30 +49,20 @@ const Attendance: React.FC = () => {
     verifyTokenApi();
   }, []);
 
-  async function saveRecord() {
+  async function checkIn() {
     try {
-      setSaveloading(true);
-      let { newDataChecker, emailShow, ...dataToSend } = data;
-      await axios.post("/api/saveRecord", {
-        type: "Attendance",
-        dataToSend,
-        createdBy: global.username,
+      setSaveLoading(true);
+      await axios.post("/api/checkIn", {
+        name: global.username,
       });
     } catch (err) {
       console.log(err);
     } finally {
-      setSaveloading(false);
-      dispatch(setRecentReloaderR(global.recentReloader + 1));
+      setSaveLoading(false);
     }
   }
 
-  function checkIn() {
-    console.log("checkIn");
-  }
-  function checkOut() {
-    console.log("checkOut");
-  }
-console.log(data);
+  console.log(data);
 
   const date = new Date().toLocaleDateString();
   return (
@@ -93,13 +83,12 @@ console.log(data);
               <div className="w-full h-fit md:h-[80px] flex justify-between items-start px-5 md:px-0 pb-7 md:pb-0 gap-[25px">
                 <button
                   className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] bg-[#28a745] text-white rounded- hover:opacity-[0.8]`}
-                  onClick={saveRecord}
+                  onClick={checkIn}
                 >
                   Check In
                 </button>
                 <button
                   className={`text-center w-[50%] h-full text-sm md:text-lg xl:text-xl  font-[600] bg-[#dc3545] text-white rounded- hover:opacity-[0.8]`}
-                  onClick={checkOut}
                 >
                   Check Out
                 </button>
