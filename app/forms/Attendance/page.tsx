@@ -99,7 +99,11 @@ const Attendance: React.FC = () => {
   // console.log("checkOutLoading", !checkInDone || checkOutLoading);
 console.log(todayAttendanceData);
 
-  const date = new Date().toLocaleDateString();
+  const currentDate = new Date().toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
   return (
     <>
       {loading || isVerified === undefined || isVerified === false ? (
@@ -112,7 +116,7 @@ console.log(todayAttendanceData);
         <div className="w-full h-fit flex flex-col justify-between items-start gap-[40px] py-[50px] hideOnPrint relative">
           <div className="flex flex-col bg-[rgb(250,250,250)] justify-between items-start w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden ">
             <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[20px] xl:text-[25px] font-[600] flex items-center justify-start text-main-blue px-3 md:px-10 xl:px-20 ">
-              Attendance - {date}
+              Attendance - {currentDate}
             </h2>
             <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 ">
               {mainLoading ? (
@@ -122,33 +126,33 @@ console.log(todayAttendanceData);
               ) : (
                 <div className="w-full h-fit md:h-[80px] flex flex-wrap justify-between items-start px-5 md:px-0 pb-7 md:pb-0 gap-1 md:gap-[0px]">
                   <button
-                    className={`text-center w-full md:w-[50%] h-[60px] md:h-full text-sm md:text-lg xl:text-xl  font-[600] ${
+                    className={`text-center w-full md:w-[50%] h-[60px] md:h-full text-sm md:text-lg xl:text-xl  font-[600] leading-0 ${
                       !checkInDone
                         ? "bg-[#28a745] hover:opacity-[0.8]"
                         : "bg-gray-600"
-                    } text-white rounded-`}
+                    } text-white rounded-l-[10px]`}
                     onClick={checkIn}
                     disabled={checkInDone || checkInLoading}
                   >
                     {checkInLoading
                       ? "Checking In..."
                       : checkInDone
-                      ? "Checked In"
+                      ? `Checked In | ${todayAttendanceData?.checkInTime}`
                       : "Check In"}
                   </button>
                   <button
-                    className={`text-center w-full md:w-[50%] h-[60px] md:h-full text-sm md:text-lg xl:text-xl  font-[600] ${
+                    className={`text-center w-full md:w-[50%] h-[60px] md:h-full text-sm md:text-lg xl:text-xl  font-[600] leading-0 ${
                       checkInDone
                         ? "bg-[#dc3545] hover:opacity-[0.8]"
                         : "bg-gray-600"
-                    } text-white rounded-`}
+                    } text-white rounded-r-[10px]`}
                     onClick={checkOut}
                     disabled={!checkInDone || checkOutLoading}
                   >
                     {checkOutLoading
                       ? "Checking Out..."
                       : !checkInDone
-                      ? "Checked Out"
+                      ? `Checked Out | ${todayAttendanceData?.checkOutTime}`
                       : "Check Out"}
                   </button>
                 </div>

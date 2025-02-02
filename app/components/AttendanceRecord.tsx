@@ -189,7 +189,7 @@ const AttendanceRecord = () => {
                             {item.checkInTime}
                           </td>
                           <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[20%]">
-                            {item.checkOutTime}
+                            {item.checkOutTime||"---"}
                           </td>
                           <td className="last-th-border text-center  text-[12px] md:text-[16px] px-0 h-full w-[20%]">
                             {item.date}
