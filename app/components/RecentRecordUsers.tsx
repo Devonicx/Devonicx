@@ -62,6 +62,7 @@ export default function RecentRecordUsers() {
       setTableData(data);
     }
   }
+  console.log(tableData);
 
   return (
     <div className="flex flex-col bg-[rgb(250,250,250)] justify-between items-start w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden ">
@@ -131,7 +132,9 @@ export default function RecentRecordUsers() {
                               {item.password}
                             </td>
                             <td className="th-border text-center text-[12px] md:text-[16px] py-1 ps-[2%] md:py-2 w-[25%] bg-yellow-0">
-                              {item.forms.map((item2: any, key: number) => (
+                              {
+                                item.forms
+                                  ?item?.forms?.map((item2: any, key: number) => (
                                 <div
                                   key={key}
                                   className="text-start flex justify-start items-center w-[80%] ms-[20px]"
@@ -142,17 +145,23 @@ export default function RecentRecordUsers() {
                                     ) : null}
                                   </ol>
                                 </div>
-                              ))}
+                              )):"Attendance"}
                             </td>
                             <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[15%]">
                               <div className="flex justify-evenly items-center h-full">
-                                {item.forms.map((item2: any, key: number) => (
-                                  <>
-                                    {item2.includes("time:-") ? (
-                                      <>{item2?.replaceAll("time:-", "")}</>
-                                    ) : null}
-                                  </>
-                                ))}
+                                {item.forms
+                                  ? item.forms.map(
+                                      (item2: any, key: number) => (
+                                        <>
+                                          {item2.includes("time:-") ? (
+                                            <>
+                                              {item2?.replaceAll("time:-", "")}
+                                            </>
+                                          ) : null}
+                                        </>
+                                      )
+                                    )
+                                  : ""}
                               </div>
                             </td>
                             <td className="last-th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[35%]">
