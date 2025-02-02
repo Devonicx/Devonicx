@@ -96,18 +96,18 @@ export default function RecentRecordUsers() {
                   <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[5%]">
                     No.
                   </th>
-                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[19%]">
+                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[22%]">
                     Username
                   </th>
-                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[19%]">
+                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[22%]">
                     Password
                   </th>
-                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[27%]">
+                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[31%]">
                     Forms
                   </th>
-                  <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[10%]">
+                  {/* <th className="bg-white th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[10%]">
                     Created At
-                  </th>
+                  </th> */}
                   <th className="bg-white last-th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[20%]">
                     Action
                   </th>
@@ -125,13 +125,13 @@ export default function RecentRecordUsers() {
                             <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[5%]">
                               {key + 1}
                             </td>
-                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[19%]">
+                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[22%]">
                               {item.username}
                             </td>
-                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[19%]">
+                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[22%]">
                               {item.password}
                             </td>
-                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 ps-[2%] md:py-2 w-[25%] bg-yellow-0">
+                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 ps-[2%] md:py-2 w-[29%] bg-yellow-0">
                               {
                                 item.forms
                                   ?item?.forms?.map((item2: any, key: number) => (
@@ -147,7 +147,7 @@ export default function RecentRecordUsers() {
                                 </div>
                               )):"Attendance"}
                             </td>
-                            <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[15%]">
+                            {/* <td className="th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[15%]">
                               <div className="flex justify-evenly items-center h-full">
                                 {item.forms
                                   ? item.forms.map(
@@ -163,7 +163,7 @@ export default function RecentRecordUsers() {
                                     )
                                   : ""}
                               </div>
-                            </td>
+                            </td> */}
                             <td className="last-th-border text-center text-[12px] md:text-[16px] py-1 md:py-2 w-[35%]">
                               <div className="flex justify-evenly items-center h-full">
                                 <UserDeleter id={item.id} />
