@@ -22,7 +22,12 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Loader from "@/app/components/Loader";
 import RecentRecord from "@/app/components/RecentRecord";
-import { setAdminR, setFormsR, setRecentReloaderR, setUserNameR } from "@/app/store/Global";
+import {
+  setAdminR,
+  setFormsR,
+  setRecentReloaderR,
+  setUserNameR,
+} from "@/app/store/Global";
 import {
   FaAsterisk,
   FaChevronDown,
@@ -67,9 +72,6 @@ const Card: React.FC = () => {
   let [stipendText, setStipendText] = useState(data.stipendText);
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
-  let [showPrint, setShowPrint] = useState<boolean>(data.printShow);
-  let [animation, setAnimation] = useState<string>("");
-  let [printClicked, setPrintClicked] = useState<boolean>(false);
   let [fieldEmpty, setFieldEmpty] = useState<boolean>(true);
   let router = useRouter();
 
@@ -82,12 +84,11 @@ const Card: React.FC = () => {
         dispatch(setFormsR(data.forms));
         dispatch(setUserNameR(data.username));
         dispatch(setAdminR(data.admin));
-        if (!data.forms.includes("Card")) {
-          router.push("/");
-        } else {
-          setIsVerified(true);
-        }
-
+        // if (!data.forms.includes("Card")) {
+        // router.push("/");
+        // } else {
+        setIsVerified(true);
+        // }
       } catch (err) {
         router.push("/");
         setIsVerified(false);
@@ -157,43 +158,13 @@ const Card: React.FC = () => {
     };
   }
 
-
-  function regenerate(newData: any) {
-    setGender(newData.gender);
-    setCurrentDate(newData.currentDate);
-    setName(newData.name);
-    setAddress(newData.address);
-    setHiring(newData.hiring);
-    setDuration(newData.duration);
-    setStartingDate(newData.startingDate);
-    setEndingDate(newData.endingDate);
-    setResponseDate(newData.responseDate);
-    setStipend(newData.stipend);
-    setStipendText(newData.stipendText);
-    if (newData.stipend === "Totally unpaid") {
-      setStipendText1(newData.stipendText);
-    } else if (newData.stipend === "first month unpaid") {
-      setStipendText2(newData.stipendText);
-    } else if (newData.stipend === "paid internship fix") {
-      setStipendText3(newData.stipendText);
-    } else if (newData.stipend === "paid internship unFix") {
-      setStipendText4(newData.stipendText);
-    }
-  }
-
-  usePreventPrint(showPrint);
-
-  useEffect(() => {
-    dispatch(setPrintShowR(showPrint));
-  }, [showPrint]);
-
   return (
     <>
       {loading || isVerified === undefined || isVerified === false ? (
         <div className="w-fit m-auto py-24">
           <Loader />
         </div>
-      ) : !showPrint ? (
+      ) : (
         <div className="w-full h-fit flex flex-col justify-between items-start gap-[40px] py-[50px] hideOnPrint relative">
           <div
             className={`flex flex-col bg-[rgb(250,250,250)] justify-between items-start w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden `}
@@ -204,22 +175,12 @@ const Card: React.FC = () => {
             <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-blue-40">
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.gender,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Gender
                 </label>
 
                 <select
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.gender,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   onChange={(e) => {
                     setGender(e.target.value);
                   }}
@@ -233,22 +194,12 @@ const Card: React.FC = () => {
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.currentDate,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Current Date
                 </label>
                 <input
                   type="date"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] lg:text-[18px]  ${redBorder(
-                    data.currentDate,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] lg:text-[18px]  `}
                   value={currentDate.split("-").reverse().join("-")}
                   onChange={(e) => {
                     setCurrentDate(
@@ -259,23 +210,13 @@ const Card: React.FC = () => {
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.name,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Name
                 </label>
                 <input
                   placeholder="Enter Name"
                   type="text"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.name,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
@@ -284,23 +225,13 @@ const Card: React.FC = () => {
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.gender,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Address
                 </label>
                 <input
                   placeholder="Enter Address"
                   type="text"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.address,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   onChange={(e) => {
                     setAddress(e.target.value);
                   }}
@@ -309,23 +240,13 @@ const Card: React.FC = () => {
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.hiring,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Hiring Position
                 </label>
                 <input
                   placeholder="Enter Hiring Position"
                   type="text"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.hiring,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   onChange={(e) => {
                     setHiring(e.target.value);
                   }}
@@ -335,13 +256,7 @@ const Card: React.FC = () => {
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-fit flex flex-col justify-end items-end">
                   <span className="w-fit text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                    <FaAsterisk
-                      className={` text-[8px] mt-[4px] w-fit ${redColor(
-                        data.gender,
-                        fieldEmpty,
-                        printClicked
-                      )}`}
-                    />
+                    <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                     Duration
                   </span>
                   <span className=" text-[9px] md:text-[10px] xl:text-[12px]  font-[400]">
@@ -351,11 +266,7 @@ const Card: React.FC = () => {
                 <input
                   placeholder="Enter Duration"
                   type="number"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.duration,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   onChange={(e) => {
                     setDuration(e.target.value);
                   }}
@@ -364,23 +275,13 @@ const Card: React.FC = () => {
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.startingDate,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Starting Date
                 </label>
                 <input
                   placeholder="Enter Salary"
                   type="date"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.startingDate,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   value={startingDate.split("-").reverse().join("-")}
                   onChange={(e) => {
                     setStartingDate(
@@ -391,23 +292,13 @@ const Card: React.FC = () => {
               </div>
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
                 <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px]">
-                  <FaAsterisk
-                    className={` text-[8px] mt-[4px] w-fit ${redColor(
-                      data.endingDate,
-                      fieldEmpty,
-                      printClicked
-                    )}`}
-                  />
+                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
                   Ending Date
                 </label>
                 <input
                   placeholder="Enter Salary"
                   type="date"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   ${redBorder(
-                    data.endingDate,
-                    fieldEmpty,
-                    printClicked
-                  )}`}
+                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] xl:text-[18px]   `}
                   value={endingDate.split("-").reverse().join("-")}
                   onChange={(e) => {
                     setEndingDate(
@@ -536,49 +427,12 @@ const Card: React.FC = () => {
             </div>
             <div className="w-full h-fit md:h-[100px] flex justify-end items-start px-5 md:px-20 pb-7 md:pb-10 gap-[25px]">
               <button
-                className={`text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]`}
-                onClick={() =>
-                  hasEmptyFieldResDate(
-                    data,
-                    setPrintClicked,
-                    setFieldEmpty,
-                    setShowPrint
-                  )
-                }
-              >
-                Save PDF
-              </button>
-              <button
                 className="text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]"
                 onClick={() => dispatch(setEmailShowR(true))}
               >
-                Save for Email
+                Save Card
               </button>
             </div>
-          </div>
-          <RecentRecord
-            letterType={"Card"}
-            regenerate={regenerate}
-            setShowPrint={setShowPrint}
-          />
-        </div>
-      ) : (
-        <div className="w-full h-fit flex justify-center items-center overflow-auto">
-          <button
-            className="w-[40px] md:w-[50px] h-[40px] md:h-[50px] flex justify-start items-center fixed left-[2vh] md:left-[5vh] top-[50vh] rounded-full hideOnPrint bg-neutral-100 z-[200]"
-            onClick={() => setShowPrint(false)}
-            title="Back To Form"
-          >
-            <FaChevronLeft className="w-[80%] h-[80%] text-[#27416b]" />
-          </button>
-          <button
-            className="w-[40px] md:w-[50px] h-[40px] md:h-[50px] flex justify-center items-center fixed right-[2vh] md:right-[5vh] top-[50vh] rounded-full hideOnPrint bg-neutral-100 z-[200]"
-            onClick={() => window.print()}
-            title="Make Print"
-          >
-            <FaPrint className="w-[60%] h-[60%] text-[#27416b]" />
-          </button>
-          <div className="w-full h-full overflow-auto">
           </div>
         </div>
       )}
