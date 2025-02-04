@@ -8,7 +8,7 @@ interface propType {
   id: number;
 }
 
-const Deleter: React.FC<propType> = ({ id }) => {
+const BusinessDeleter: React.FC<propType> = ({ id }) => {
   let [deleteLoading, setDeleteLoading] = useState<any>(null);
   let [deleteDialog, setDeleteDialog] = useState<any>(false);
   let dispatch = useDispatch();
@@ -17,7 +17,7 @@ const Deleter: React.FC<propType> = ({ id }) => {
   async function deleteRecord(id: number) {
     try {
       setDeleteLoading(id);
-      await axios.delete(`/api/deleteRecord/${id}`);
+      await axios.delete(`/api/deleteBusinessRecord/${id}`);
     } catch (err) {
       console.log(err);
     } finally {
@@ -33,7 +33,7 @@ const Deleter: React.FC<propType> = ({ id }) => {
           onClick={() => {
             setDeleteDialog(true);
           }}
-          className="text-red-400 leading-3 underline hover:no-underline border-e-2 border-color h-full w-full px-5 "
+          className="text-red-400 leading-3 underline hover:no-underline border-e-2 border-color h-full w-ful px-3 w-[50%] text-center  "
         >
           Delete
         </button>
@@ -76,4 +76,4 @@ const Deleter: React.FC<propType> = ({ id }) => {
   );
 };
 
-export default Deleter;
+export default BusinessDeleter;

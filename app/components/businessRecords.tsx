@@ -14,6 +14,7 @@ import { RootState } from "../store";
 import Deleter from "./Deleter";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
+import BusinessDeleter from "./BusinessDeleter";
 interface propType {
   letterType: String;
 }
@@ -216,7 +217,7 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
                           </td>
                           <td className="text-center  text-[12px] md:text-[16px] px-0 h-full w-[6%]">
                             <div className="flex justify-evenly items-center h-full">
-                              <Deleter id={item.id} />{" "}
+                              <BusinessDeleter id={item.id} />{" "}
                               <button
                                 className={`${
                                   inFormId === item.id
