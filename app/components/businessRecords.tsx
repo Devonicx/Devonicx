@@ -74,13 +74,7 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
         (item: any) =>
           item.data?.companyName?.toLowerCase().includes(e.toLowerCase()) ||
           item.data?.agentName?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.closureName?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.nameOnCard?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.cardNumber?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.expirationDate?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.cvv?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.billingAddress?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.currentDate?.includes(e)
+          item.data?.closureName?.toLowerCase().includes(e.toLowerCase()) 
       );
       setTableData(tempData);
       setMultiplier(0);
@@ -118,7 +112,7 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
         <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-pink-90">
           <div className="w-[100%] md:w-[50%] h-[45px] rounded-[10px] px-5 bg-blue-30 relative flex justify-end items-center">
             <input
-              placeholder="Search by name and date"
+              placeholder="Search by company, agent or closure"
               className="w-full h-full rounded-[10px] px-5 border-2 focus:outline-none border-color absolute left-0 z-0 text-[12px] md:text-[16px] hover:border-black"
               onChange={(e) => {
                 search(e.target.value.trim()), setSearchText(e.target.value);
