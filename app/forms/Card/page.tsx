@@ -15,9 +15,12 @@ const Card: React.FC = () => {
   let dispatch = useDispatch();
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
+  let [showForm, setShowForm] = useState<any>(false);
   let [saveLoading, setSaveLoading] = useState<any>(false);
   let router = useRouter();
   let global = useSelector((state: RootState) => state.Global);
+  let Card = useSelector((state: RootState) => state.Card);
+  let [id, setId] = useState<number>();
 
   useEffect(() => {
     async function verifyTokenApi() {
@@ -73,17 +76,41 @@ const Card: React.FC = () => {
     }
   };
 
+  const handleUpdateSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      setSaveLoading(true);
+      await axios.post("/api/updateBusinessDetails", {
+        id,
+        formData,
+      });
+      dispatch(resetForm());
+      setShowForm(false);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSaveLoading(false);
+    }
+  };
+  console.log(showForm);
+
   return (
     <>
       {loading || isVerified === undefined || isVerified === false ? (
         <div className="w-fit m-auto py-24">
           <Loader />
         </div>
-      ) : global.admin ? (
-        <BusinessRecords letterType={"Card"} />
+      ) : global.admin && !showForm ? (
+        <BusinessRecords
+          letterType={"Card"}
+          setShowForm={setShowForm}
+          showForm={showForm}
+          setId={setId}
+        />
       ) : (
         <form
-          onSubmit={handleSubmit}
+          onSubmit={showForm ? handleUpdateSubmit : handleSubmit}
           className="w-full h-fit flex flex-col justify-between items-start gap-[40px] py-[50px] hideOnPrint relative"
         >
           <div
@@ -208,11 +235,26 @@ const Card: React.FC = () => {
             </div>
             <div className="w-full h-fit md:h-[100px] flex justify-end items-start px-3 md:px-10 xl:px-20 pb-7 md:pb-10 gap-[25px]">
               <button
+                className={`text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]`}
+                onClick={() => {
+                  setShowForm(false);
+                }}
+              >
+                Back{" "}
+              </button>
+              <button
                 className={`text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] text-white rounded-[10px] hover:opacity-[0.8]  ${
                   saveLoading ? "bg-gray-600" : "bg-[#27416b]"
                 }`}
+                type="submit"
               >
-                {saveLoading ? "Saving Card..." : "Save Card"}{" "}
+                {saveLoading
+                  ? !showForm
+                    ? "Saving Card..."
+                    : "Updating Card..."
+                  : !showForm
+                  ? "Save Card"
+                  : "Update Card"}
               </button>
             </div>
           </div>

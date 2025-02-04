@@ -14,22 +14,31 @@ import { RootState } from "../store";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
 import BusinessDeleter from "./BusinessDeleter";
+import { updateAllValues } from "../store/Card";
 
 interface propType {
   letterType: String;
+  setShowForm: any;
+  showForm: boolean;
+  setId:any;
 }
 
-const BusinessRecords: React.FC<propType> = ({ letterType }) => {
+const BusinessRecords: React.FC<propType> = ({
+  letterType,
+  setShowForm,
+  showForm,
+  setId,
+}) => {
   let [data, setData] = useState<any>();
   let [tableData, setTableData] = useState<any>();
   let [searchText, setSearchText] = useState<any>();
   let [recentLoading, setRecentLoading] = useState<boolean>(true);
   let global = useSelector((state: RootState) => state.Global);
+  let Card = useSelector((state: RootState) => state.Card);
   let [multiplier, setMultiplier] = useState(0);
-  let [inFormId, setInFormId] = useState<number>();
   let [limit, setLimit] = useState<number>(10);
   let dispatch = useDispatch();
-  console.log(data);
+  console.log(Card);
 
   useEffect(() => {
     async function getData() {
@@ -74,7 +83,7 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
         (item: any) =>
           item.data?.companyName?.toLowerCase().includes(e.toLowerCase()) ||
           item.data?.agentName?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.closureName?.toLowerCase().includes(e.toLowerCase()) 
+          item.data?.closureName?.toLowerCase().includes(e.toLowerCase())
       );
       setTableData(tempData);
       setMultiplier(0);
@@ -201,11 +210,12 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
                             <div className="flex justify-evenly items-center h-full">
                               <BusinessDeleter id={item.id} />{" "}
                               <button
-                                className={`${
-                                  inFormId === item.id
-                                    ? "regenerate-effect"
-                                    : ""
-                                } text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] text-center `}
+                                className={` text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] text-center `}
+                                onClick={() => {
+                                  setShowForm(true);
+                                  setId(item.id);
+                                  dispatch(updateAllValues(item.data));
+                                }}
                               >
                                 Edit
                               </button>
