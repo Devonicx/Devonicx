@@ -11,10 +11,10 @@ import {
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import Deleter from "./Deleter";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
 import BusinessDeleter from "./BusinessDeleter";
+
 interface propType {
   letterType: String;
 }
@@ -82,17 +82,6 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
       setTableData(data);
     }
   }
-  useEffect(() => {
-    async function getUserData() {
-      try {
-        let { data } = await axios.get("/api/userData");
-      } catch (er) {
-        console.log(er);
-      } finally {
-      }
-    }
-    getUserData();
-  }, []);
 
   useEffect(() => {
     if (tableData) {
