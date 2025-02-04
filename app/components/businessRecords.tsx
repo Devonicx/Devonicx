@@ -83,7 +83,7 @@ const BusinessRecords: React.FC<propType> = ({
         (item: any) =>
           item.data?.companyName?.toLowerCase().includes(e.toLowerCase()) ||
           item.data?.agentName?.toLowerCase().includes(e.toLowerCase()) ||
-          item.data?.closureName?.toLowerCase().includes(e.toLowerCase())
+          item.createdBy?.toLowerCase().includes(e.toLowerCase())
       );
       setTableData(tempData);
       setMultiplier(0);

@@ -4,7 +4,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState: any = {
   companyName: "",
   agentName: "",
-  closureName: "",
   nameOnCard: "",
   cardNumber: "",
   expirationDate: "",

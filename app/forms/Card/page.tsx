@@ -128,6 +128,7 @@ const Card: React.FC = () => {
                 <input
                   type="text"
                   name="companyName"
+                  required
                   value={formData.companyName}
                   onChange={handleChange}
                   placeholder="companyName"
@@ -142,23 +143,10 @@ const Card: React.FC = () => {
                 <input
                   type="text"
                   name="agentName"
+                  required
                   value={formData.agentName}
                   onChange={handleChange}
                   placeholder="agentName"
-                  className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] lg:text-[18px]`}
-                />
-              </div>
-              <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
-                <label className="w-[30%] text-[12px] md:text-[14px] xl:text-[18px]  font-[500] flex items-start justify-start gap-[5px] capitalize">
-                  <FaAsterisk className={` text-[8px] mt-[4px] w-fit `} />
-                  closure Name
-                </label>
-                <input
-                  type="text"
-                  name="closureName"
-                  value={formData.closureName}
-                  onChange={handleChange}
-                  placeholder="closureName"
                   className={`w-[60%] h-[45px] rounded-[10px] px-3 border-2 text-[12px] md:text-[14px] lg:text-[18px]`}
                 />
               </div>
@@ -170,6 +158,7 @@ const Card: React.FC = () => {
                 <input
                   type="text"
                   name="nameOnCard"
+                  required
                   value={formData.nameOnCard}
                   onChange={handleChange}
                   placeholder="nameOnCard"
@@ -184,6 +173,7 @@ const Card: React.FC = () => {
                 <input
                   type="number"
                   name="cardNumber"
+                  required
                   value={formData.cardNumber}
                   onChange={handleChange}
                   placeholder="cardNumber"
@@ -198,6 +188,7 @@ const Card: React.FC = () => {
                 <input
                   type="date"
                   name="expirationDate"
+                  required
                   value={formData.expirationDate}
                   onChange={handleChange}
                   placeholder="expirationDate"
@@ -212,6 +203,7 @@ const Card: React.FC = () => {
                 <input
                   type="number"
                   name="cvv"
+                  required
                   value={formData.cvv}
                   onChange={handleChange}
                   placeholder="Cvv"
@@ -226,6 +218,7 @@ const Card: React.FC = () => {
                 <input
                   type="text"
                   name="billingAddress"
+                  required
                   value={formData.billingAddress}
                   onChange={handleChange}
                   placeholder="Billing Address"
