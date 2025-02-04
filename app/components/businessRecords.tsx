@@ -100,10 +100,10 @@ const BusinessRecords: React.FC<propType> = ({
   }, [tableData]);
 
   return (
-    <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center">
+    <div className="py-[50px] w-[100%] h-fit hideOnPrint flex justify-center items-center">
       <div className="flex flex-col bg-[rgb(250,250,250)] justify-center items-center w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden">
         <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
-          <span>Recent Records</span>
+          <span>Card Details Records</span>
           <span>Total: {tableData?.length}</span>
         </h2>
         <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-pink-90">

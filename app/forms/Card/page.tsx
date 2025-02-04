@@ -69,6 +69,7 @@ const Card: React.FC = () => {
         createdBy: global.username,
       });
       dispatch(resetForm());
+      alert("Card Saved Successfully")
     } catch (err) {
       console.log(err);
     } finally {
@@ -87,6 +88,7 @@ const Card: React.FC = () => {
       });
       dispatch(resetForm());
       setShowForm(false);
+      alert("Card Updated Successfully")
     } catch (err) {
       console.log(err);
     } finally {
@@ -117,7 +119,7 @@ const Card: React.FC = () => {
             className={`flex flex-col bg-[rgb(250,250,250)] justify-between items-start w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden `}
           >
             <h2 className="w-full h-[70px] border-b-[1px] border-color  text-[16px] md:text-[20px] xl:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-start text-main-blue">
-              Internship Offer Letter
+              Card Details
             </h2>
             <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-blue-40">
               <div className="w-[100%] md:w-[45%] h-[70px] flex justify-between  items-center relative">
