@@ -28,6 +28,14 @@ model recentRecords {
   data String @db.VarChar(16380)
 }
 
+model BusinessRecords {
+  id        Int    @id @default(autoincrement())
+  type      String
+  time      String
+  data      String @db.VarChar(16380)
+  createdBy String
+}
+
 model attendanceRecords {
   id           Int    @id @default(autoincrement())
   name         String

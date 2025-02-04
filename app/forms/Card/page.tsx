@@ -14,7 +14,9 @@ const Card: React.FC = () => {
   let dispatch = useDispatch();
   let [isVerified, setIsVerified] = useState<any>(undefined);
   let [loading, setLoading] = useState<any>(true);
+  let [saveLoading, setSaveLoading] = useState<any>(false);
   let router = useRouter();
+  let global = useSelector((state: RootState) => state.Global);
 
   useEffect(() => {
     async function verifyTokenApi() {
@@ -52,9 +54,22 @@ const Card: React.FC = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
+    try {
+      setSaveLoading(true);
+      await axios.post("/api/saveBusinessDetails", {
+        type: "Card",
+        formData,
+        createdBy: global.username,
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSaveLoading(false);
+    }
+
     // dispatch(resetForm());
   };
 
