@@ -89,7 +89,6 @@ const BusinessRecords: React.FC<propType> = ({ letterType }) => {
       dispatch(setLastEmployeeIdR(tableData[0]?.data.employeeId));
     }
   }, [tableData]);
-  console.log(data?.data );
 
   return (
     <div className="w-[100%] h-fit hideOnPrint flex justify-center items-center">

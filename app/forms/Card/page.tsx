@@ -28,11 +28,11 @@ const Card: React.FC = () => {
         dispatch(setFormsR(data.forms));
         dispatch(setUserNameR(data.username));
         dispatch(setAdminR(data.admin));
-        // if (!data.forms.includes("Card")) {
-        // router.push("/");
-        // } else {
-        setIsVerified(true);
-        // }
+        if (!data.forms.includes("Business-Details")) {
+          router.push("/");
+        } else {
+          setIsVerified(true);
+        }
       } catch (err) {
         router.push("/");
         setIsVerified(false);

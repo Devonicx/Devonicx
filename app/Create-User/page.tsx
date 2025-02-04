@@ -80,7 +80,7 @@ export default function CreateUser() {
       //   break;
       // } else
       console.log(obj);
-      
+
       if (typeof obj[key] === "string" && obj[key]?.trim() === "") {
         hasEmpty = true;
         alert("Some required fields are empty");
@@ -128,6 +128,7 @@ export default function CreateUser() {
     let checked = e.target.checked;
     if (checked) {
       setFormsArray([
+        "Business-Details",
         "Internship-Extension-Letter",
         "Probation-Extension-Letter",
         "Offer-Letter-Intern",
@@ -249,6 +250,22 @@ export default function CreateUser() {
                     />
                     <label>Offer-Letter-Intern</label>
                   </div>
+
+                  <div
+                    className={`w-[100%] md:w-[49%] h-[45px] rounded-[10px] px-3 border-2 border-color flex justify-start items-center gap-[10px]  text-[12px] md:text-[14px] xl:text-[18px]`}
+                  >
+                    <input
+                      type="checkbox"
+                      className="w-[20px] h-[20px]"
+                      checked={
+                        formsArray.includes("Business-Details") ? true : false
+                      }
+                      onChange={(e) => handleChange(e)}
+                      name="Business-Details"
+                    />
+                    <label>Business-Details</label>
+                  </div>
+
                   <div
                     className={`w-[100%] md:w-[49%] h-[45px] rounded-[10px] px-3 border-2 border-color flex justify-start items-center gap-[10px]  text-[12px] md:text-[14px] xl:text-[18px]`}
                   >
