@@ -204,8 +204,12 @@ const Card: React.FC = () => {
               </div>
             </div>
             <div className="w-full h-fit md:h-[100px] flex justify-end items-start px-3 md:px-10 xl:px-20 pb-7 md:pb-10 gap-[25px]">
-              <button className="text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] bg-[#27416b] text-white rounded-[10px] hover:opacity-[0.8]">
-                Save Card
+              <button
+                className={`text-center px-[20px] py-[7px] text-[12px] md:text-[14px] xl:text-[18px]  font-[600] text-white rounded-[10px] hover:opacity-[0.8]  ${
+                  saveLoading ? "bg-gray-600" : "bg-[#27416b]"
+                }`}
+              >
+                {saveLoading ? "Saving Card..." : "Save Card"}{" "}
               </button>
             </div>
           </div>
