@@ -33,7 +33,7 @@ const Deleter: React.FC<propType> = ({ id }) => {
           onClick={() => {
             setDeleteDialog(true);
           }}
-          className="text-red-400 leading-3 underline hover:no-underline border-e-2 border-color h-full w-full px-5 "
+          className="text-red-400 leading-3 underline hover:no-underline border-e-2 border-color h-full w-ful px-3 w-[50%] text-center  "
         >
           Delete
         </button>

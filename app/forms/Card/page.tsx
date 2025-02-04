@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import Loader from "@/app/components/Loader";
 import { setAdminR, setFormsR, setUserNameR } from "@/app/store/Global";
 import { FaAsterisk } from "react-icons/fa";
+import BusinessRecords from "@/app/components/businessRecords";
 
 const Card: React.FC = () => {
   let dispatch = useDispatch();
@@ -78,6 +79,8 @@ const Card: React.FC = () => {
         <div className="w-fit m-auto py-24">
           <Loader />
         </div>
+      ) : global.admin ? (
+        <BusinessRecords letterType={"Card"} />
       ) : (
         <form
           onSubmit={handleSubmit}
