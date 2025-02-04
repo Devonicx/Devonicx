@@ -64,13 +64,12 @@ const Card: React.FC = () => {
         formData,
         createdBy: global.username,
       });
+      dispatch(resetForm());
     } catch (err) {
       console.log(err);
     } finally {
       setSaveLoading(false);
     }
-
-    // dispatch(resetForm());
   };
 
   return (
