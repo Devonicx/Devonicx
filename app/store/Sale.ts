@@ -4,15 +4,24 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState: any = {
   companyName: "",
   agentName: "",
-  nameOnCard: "",
-  cardNumber: "",
-  expirationDate: "",
-  cvv: "",
-  billingAddress: "",
+  bussPhoneNumber: "",
+  ownerName: "",
+  personalPhoneNumber: "",
+  bussEmail: "",
+  personalEmail: "",
+  websiteLink: "",
+  yelpLink: "",
+  servicesOffered: "",
+  services: "",
+  areas: "",
+  keyword: "",
+  paymentMethod: "",
+  salesAmount: "",
+  notes: "",
 };
 
 const formSlice = createSlice({
-  name: "Card",
+  name: "Sale",
   initialState,
   reducers: {
     updateField: (state, action: PayloadAction<{ field: any; value: any }>) => {

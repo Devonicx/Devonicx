@@ -14,7 +14,7 @@ import { RootState } from "../store";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
 import BusinessDeleter from "./BusinessDeleter";
-import { updateAllValues } from "../store/Card";
+// import { updateAllValues } from "../store/Card";
 
 interface propType {
   letterType: String;
@@ -33,14 +33,20 @@ const BusinessRecords: React.FC<propType> = ({
   let [tableData, setTableData] = useState<any>();
   let [searchText, setSearchText] = useState<any>();
   let [recentLoading, setRecentLoading] = useState<boolean>(true);
+  const [updateAllValues, setUpdateAllValues] = useState<any>(null);
   let global = useSelector((state: RootState) => state.Global);
-  let Card = useSelector((state: RootState) => state.Card);
+  const formData = useSelector((state: RootState) => state[letterType]);
   let [multiplier, setMultiplier] = useState(0);
   let [limit, setLimit] = useState<number>(10);
   let dispatch = useDispatch();
-  console.log(Card);
 
   useEffect(() => {
+    const loadActions = async () => {
+      const { updateAllValues } = await import(`@/app/store/${letterType}`);
+      setUpdateAllValues(() => updateAllValues);
+    };
+
+    loadActions();
     async function getData() {
       try {
         setRecentLoading(true);
@@ -103,7 +109,7 @@ const BusinessRecords: React.FC<propType> = ({
     <div className="py-[50px] w-[100%] h-fit hideOnPrint flex justify-center items-center">
       <div className="flex flex-col bg-[rgb(250,250,250)] justify-center items-center w-[95%] 2xl:w-[87%] h-fit mx-auto rounded-[15px] border-[1px] border-color overflow-hidden">
         <h2 className="w-full h-[70px] border-b-[1px] border-color text-[16px] md:text-[25px] font-[600] px-3 md:px-10 xl:px-20 flex items-center justify-between text-main-blue">
-          <span>Card Details Records</span>
+          <span>{letterType} Details Records</span>
           <span>Total: {tableData?.length}</span>
         </h2>
         <div className="w-full h-fit flex justify-between flex-wrap items-start py-8 px-3 md:px-10 xl:px-20 bg-pink-90">

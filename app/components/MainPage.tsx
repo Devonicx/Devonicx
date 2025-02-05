@@ -111,6 +111,21 @@ function MainPage() {
                   </h3>
                 </div>
               </Link>
+              <Link
+                href={"/forms/Sale"}
+                className="w-[170px] md:w-[200px] h-[130px] md:h-[200px] flex flex-col justify-center items-center rounded-[10px] border-2 border-color bg-white gap-[5%] hover:border-[#27416b] "
+              >
+                <div className="w-[170px] md:w-[200px] h-[50%] flex flex-col justify-center items-center">
+                  <div className="w-[60px] md:w-[85px] h-[60px] md:h-[85px] rounded-full bg-neutral-100 flex justify-center items-center">
+                    <img src={pic12.src} className="w-[60%] h-[60%]" />
+                  </div>
+                </div>
+                <div className="w-[90%] h-[30%]">
+                  <h3 className="text-[14px] md:text-[18px] text-center font-[500]">
+                    Sale Details{" "}
+                  </h3>
+                </div>
+              </Link>
             </div>
           </div>
         ) : null}
