@@ -188,7 +188,7 @@ const Card: React.FC = () => {
                   expiration Date
                 </label>
                 <input
-                  type="date"
+                  type="month"
                   name="expirationDate"
                   required
                   value={formData.expirationDate}
