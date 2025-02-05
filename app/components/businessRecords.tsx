@@ -14,7 +14,6 @@ import { RootState } from "../store";
 import { setLastRefNoR } from "../store/ExperienceLetter";
 import { setLastEmployeeIdR } from "../store/SocialMediaConsent";
 import BusinessDeleter from "./BusinessDeleter";
-// import { updateAllValues } from "../store/Card";
 
 interface propType {
   letterType: String;
