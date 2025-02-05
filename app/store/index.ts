@@ -17,6 +17,7 @@ import Global from "./Global";
 import Attendance from "./Attendance";
 import Card from "./Card";
 import Sale from "./Sale";
+import Transfer from "./Transfer";
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -39,6 +40,7 @@ const rootReducer = combineReducers({
   Attendance: Attendance,
   Card: Card,
   Sale: Sale,
+  Transfer: Transfer,
 });
 
 const store = configureStore({
