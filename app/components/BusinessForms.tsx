@@ -25,7 +25,7 @@ const BusinessForms: React.FC<BusinessFormsType> = ({ type, inputArray }) => {
   let [saveLoading, setSaveLoading] = useState<any>(false);
   let router = useRouter();
   let global = useSelector((state: RootState) => state.Global);
-  const formData = useSelector((state: RootState) => state[type]);
+  const formData:any = useSelector((state: RootState) => state[type]);
   let [id, setId] = useState<number>();
 
   useEffect(() => {
