@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import BusinessDeleter from "../BusinessDeleter";
 import Loader from "../Loader";
 import { useDispatch } from "react-redux";
-import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import {
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+  FaAngleLeft,
+  FaAngleRight,
+} from "react-icons/fa";
 import Link from "next/link";
 
 const TransferTable = ({
@@ -25,10 +30,11 @@ const TransferTable = ({
     };
     loadActions();
   }, []);
+  console.log(tableData);
 
   return (
-    <div className="w-full h-fit bg-yellow-20 pb-5 px-3 md:px-10 xl:px-20">
-      <div className="h-fit bg-pink-60 flex flex-col justify-between overflow-auto">
+    <div className="w-full h-fit pb-5 px-3 md:px-10 xl:px-20">
+      <div className="h-fit flex flex-col justify-between overflow-auto">
         <table className="h-fit table-border mx-auto w-[1500px] md:w-[2000px] relative">
           <thead className="w-full">
             <tr className="w-full">
@@ -42,24 +48,24 @@ const TransferTable = ({
                 company Name
               </th>
               <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[7%]">
-                card Number
+                Areas
               </th>
               <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[7%]">
-                name On Card
+                business Email
               </th>
               <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[8%]">
-                billing Address
+                business Phone Number
+              </th>
+              <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[7%]">
+                keyword
               </th>
               <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[5%]">
-                expiration Date
-              </th>
-              <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[3%]">
-                cvv
+                sales Amount
               </th>
               <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[6%]">
                 closure Name
               </th>
-              <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[5%]">
+              <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[6%]">
                 created at
               </th>
               <th className="last-th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[7%]">
@@ -77,64 +83,62 @@ const TransferTable = ({
                 {key >= multiplier * limit &&
                 key < limit * (multiplier + 1) &&
                 tableData[key] ? (
-                  <>
-                    <tr
-                      key={key}
-                      className={`bg-[rgb(240,240,240)] w-full tr-border`}
-                    >
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[1.5%]">
-                        {key + 1}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[8%]">
-                        {item.data.agentName}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[8%]">
-                        {item.data.companyName}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[7%]">
-                        {item.data.cardNumber}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[7%]">
-                        {item.data.nameOnCard}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[8%]">
-                        {item.data.billingAddress}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[5%]">
-                        {item.data.expirationDate}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[3%]">
-                        {item.data.cvv}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[6%]">
-                        {item?.createdBy}
-                      </td>
-                      <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[5%]">
-                        {item?.time}
-                      </td>
-                      <td className="text-center  text-[12px] md:text-[16px] px-0 h-full w-[7%]">
-                        <div className="flex justify-evenly items-center h-full">
-                          <BusinessDeleter id={item.id} />{" "}
-                          <button
-                            className={` text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] text-center `}
-                            onClick={() => {
-                              setShowForm(true);
-                              setId(item.id);
-                              dispatch(updateAllValues(item.data));
-                            }}
-                          >
-                            Edit
-                          </button>
-                          <Link
-                            href={`/forms/Transfer/${item.id}`}
-                            className={`text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] flex justify-center items-center`}
-                          >
-                            Open
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  </>
+                  <tr
+                    key={key}
+                    className={`bg-[rgb(240,240,240) w-full tr-border`}
+                  >
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[1.5%]">
+                      {key + 1}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[8%]">
+                      {item.data.agentName}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[8%]">
+                      {item.data.companyName}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[7%]">
+                      {item.data.areas}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[7%]">
+                      {item.data.bussEmail}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[8%]">
+                      {item.data.bussPhoneNumber}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[7%]">
+                      {item.data.keyword}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[5%]">
+                      {item.data.salesAmount}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[6%]">
+                      {item?.createdBy}
+                    </td>
+                    <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[6%]">
+                      {item?.time}
+                    </td>
+                    <td className="text-center  text-[12px] md:text-[16px] px-0 h-full w-[7%]">
+                      <div className="flex justify-evenly items-center h-full">
+                        <BusinessDeleter id={item.id} />{" "}
+                        <button
+                          className={` text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] text-center `}
+                          onClick={() => {
+                            setShowForm(true);
+                            setId(item.id);
+                            dispatch(updateAllValues(item.data));
+                          }}
+                        >
+                          Edit
+                        </button>
+                        <Link
+                          href={`/forms/${letterType}/${item.id}`}
+                          className={`text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] flex justify-center items-center`}
+                        >
+                          Open
+                        </Link>
+                      </div>
+                    </td>
+                  </tr>
                 ) : null}
               </tbody>
             ))
@@ -252,4 +256,4 @@ const TransferTable = ({
     </div>
   );
 };
-export default TransferTable
+export default TransferTable;
