@@ -131,7 +131,7 @@ const SaleTable = ({
                           Edit
                         </button>
                         <Link
-                          href={`/Sale/${item.id}`}
+                          href={`/forms/Sale/${item.id}`}
                           className={`text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] flex justify-center items-center`}
                         >
                           Open
