@@ -3,6 +3,7 @@ import BusinessDeleter from "../BusinessDeleter";
 import Loader from "../Loader";
 import { useDispatch } from "react-redux";
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import Link from "next/link";
 
 const TransferTable = ({
   tableData,
@@ -61,7 +62,7 @@ const TransferTable = ({
               <th className="th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[5%]">
                 created at
               </th>
-              <th className="last-th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[6%]">
+              <th className="last-th-border text-center capitalize text-[12px] md:text-[16px] py-1 md:py-2 w-[7%]">
                 Action
               </th>
             </tr>
@@ -111,7 +112,7 @@ const TransferTable = ({
                       <td className="td-border text-center py-1 md:py-[14px] text-[12px] md:text-[16px] w-[5%]">
                         {item?.time}
                       </td>
-                      <td className="text-center  text-[12px] md:text-[16px] px-0 h-full w-[6%]">
+                      <td className="text-center  text-[12px] md:text-[16px] px-0 h-full w-[7%]">
                         <div className="flex justify-evenly items-center h-full">
                           <BusinessDeleter id={item.id} />{" "}
                           <button
@@ -124,6 +125,12 @@ const TransferTable = ({
                           >
                             Edit
                           </button>
+                          <Link
+                            href={`/forms/Transfer/${item.id}`}
+                            className={`text-main-blue underline hover:no-underline border-e-2 border-color h-full px-3 w-[50%] flex justify-center items-center`}
+                          >
+                            Open
+                          </Link>
                         </div>
                       </td>
                     </tr>
